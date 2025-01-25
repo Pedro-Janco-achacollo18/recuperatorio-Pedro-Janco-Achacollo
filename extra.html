@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="extitulo">Extras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        .navbar {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+        .section {
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar fixed top-0 left-0 right-0 p-4 bg-gray-800 shadow-lg z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-white text-2xl font-bold">P. J. A.</div>    
+            <!-- Selector de idioma -->
+            <div>
+                <select id="language-selector" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>          
+                </select>
+            </div>        
+            <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent absolute md:static top-16 left-0 right-0 w-full md:w-auto px-4 md:px-0 py-4 md:py-0 shadow-lg md:shadow-none">
+                <li><a href="#plantillas" class="block text-gray-300 hover:text-white" data-i18n="exmenu1">Plantillas</a></li>
+                <li><a href="#videos" class="block text-gray-300 hover:text-white" data-i18n="exmenu2">Videos</a></li>
+                <li><a href="#casos" class="block text-gray-300 hover:text-white" data-i18n="exmenu3">Casos de estudio</a></li>
+                <li><a href="#ideas" class="block text-gray-300 hover:text-white" data-i18n="exmenu4">Ideas </a></li>
+                <li><button onclick="history.back()" class="btn btn-secondary w-100 py-2 mt-3 fw-bold">Atrás</button></li>
+            </ul>
+        </div>
+    </nav>
+        <!--scrip para la internalizacion del contenido-->
+        <script>
+            //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                var name = keys[i].getAttribute("name");
+                var value = keys[i].getElementsByTagName(language)[0].textContent;
+                translations[name] = value;
+                }
+
+                i18next.init(
+                {
+                    lng: language,
+                    resources: {
+                    [language]: {
+                        translation: translations,
+                    },
+                    },
+                },
+                function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                    });
+                }
+                );
+            }
+            };
+            xhr.send();
+        }
+
+        // Cambiar idioma con el selector
+        document.getElementById("language-selector").addEventListener("change", function () {
+            loadTranslations(this.value);
+        });
+
+        // Idioma predeterminado al cargar la página
+        window.onload = function () {
+            loadTranslations("es");
+        };
+        </script>
+        <!--Aqui termina el script de la internalizacion del contenido-->
+
+
+    <!-- Contenido principal -->
+    <div class="pt-20"> <!-- Espacio para el menú fijo -->
+        <!-- Sección de inicio -->
+        <section id="inicio" class="relative mb-8">
+            <!-- Imagen de fondo -->
+            <img src="imgsub/fondo2.avif" 
+                 alt="Fondo" 
+                 class="w-full h-[60vh] md:h-[80vh] object-cover filter brightness-75 rounded-lg shadow-lg">
+            <!-- Texto superpuesto -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 animate_animated animate_fadeIn" 
+                    data-i18n="exbienvenida">
+                    Bienvenido al Menu de Extras
+                </h1>
+            </div>
+        </section>
+
+        <!-- Secciones -->
+        <div class="mt-4 space-y-6 px-4 md:px-8">
+            <section id="plantillas" class="section bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-bold text-white text-center mb-4" data-i18n="explantillas1">🌟 Plantillas para Cronogramas y Presupuestos</h2>
+                <p class="text-gray-300 text-center mb-6" data-i18n="explantillas2">Aquí encontrarás una variedad de plantillas diseñadas para facilitar la planificación y gestión de tus proyectos empresariales personalizados.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition-colors duration-300">
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="explantillas3">📅 Plantillas de Cronograma</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="explantillas4">Visualiza el progreso de tu proyecto con nuestras plantillas de cronograma:</p>
+                        <ul class="list-disc list-inside text-gray-300">
+                            <li data-i18n="explantillas5">Diagrama de Gantt: Ideal para proyectos complejos.</li>
+                            <li data-i18n="explantillas6">Calendario Mensual:  Perfecto para planificación a corto plazo.</li>
+                            <li data-i18n="explantillas7">Lista de Tareas: Seguimiento rápido de actividades pendientes.</li>
+                        </ul>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"  data-i18n="explantillas13">Descargar Cronograma</button>
+                    </div>
+            
+                    <div class="bg-gray-700 p-4 rounded-lg shadow-md hover:bg-gray-600 transition-colors duration-300">
+                        <h3 class="text-lg font-semibold text-white mb-2" data-i18n="explantillas8">💰 Plantillas de Presupuesto</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="explantillas9">Controla los costos de tu proyecto con nuestras plantillas de presupuesto:</p>
+                        <ul class="list-disc list-inside text-gray-300">
+                            <li data-i18n="explantillas10">Presupuesto General:   Categorías como materiales y mano de obra.</li>
+                            <li data-i18n="explantillas11">Seguimiento de Gastos:   Registra gastos reales vs. estimados.</li>
+                            <li data-i18n="explantillas12">Informe Financiero Mensual:  Resumen del estado financiero del proyecto.</li>
+                        </ul>
+                        <button class="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors duration-300" data-i18n="explantillas14">Descargar Presupuesto</button>
+                    </div>
+                </div>
+            
+                <p class="text-gray-300 text-center mt-6" data-i18n="explantillas15">Descarga las plantillas que mejor se adapten a tus necesidades y comienza a gestionar tus proyectos con mayor eficacia. ¡La organización es clave para el éxito!</p>
+            </section>
+
+            <!-- Sección 2: Videos -->
+            <section id="videos" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+                <h2 class="text-2xl font-semibold mb-4 text-center" data-i18n="exvideos1">Videos sobre Metodologías de Gestión (Ágil, Waterfall)</h2>
+                <p class="text-center text-gray-300 mb-6" data-i18n="exvideos2">
+                    Aprende sobre las metodologías de gestión más utilizadas en proyectos empresariales: Ágil y Waterfall.
+                </p>
+                
+                <!-- Lista de videos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Video 1 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos3">1. Introducción a la Metodología Ágil</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos4">
+                            Descubre cómo la metodología Ágil permite gestionar proyectos con flexibilidad y eficiencia.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/HhC75IonpOU?si=8uGBGDfCAh7Y-2lX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+            
+                    <!-- Video 2 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos5">2. Waterfall: Gestión de Proyectos en Cascada</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos6">
+                            Aprende cómo la metodología Waterfall estructura los proyectos en fases secuenciales y bien definidas.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/iDbZb0ehzkM?si=D1QmK4bARlaNpCx5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+            
+                    <!-- Video 3 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos7">3. Comparativa entre Ágil y Waterfall</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos8">
+                            Conoce las diferencias clave entre la metodología Ágil y Waterfall para elegir la más adecuada para tu proyecto.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/D-teLrCME_E?si=k0c-_fDcIKFNp4AE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+            
+                    <!-- Video 4 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos9">4. Implementación de Scrum en Proyectos Ágiles</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos10">
+                            Aprende cómo aplicar la metodología Scrum en proyectos ágiles para maximizar la productividad.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/PaBMnt0ZUY8?si=rRcIrtEtIDndriXx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+            
+                    <!-- Video 5 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos11">5. Gestión de Proyectos con Kanban</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos12">
+                            Entiende cómo la metodología Kanban ayuda a visualizar el trabajo y mejorar el flujo de trabajo en proyectos ágiles.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/hbhOHErOkaI?si=1wkbxw2FFCOk_9Ti" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+            
+                    <!-- Video 6 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="exvideos13">6. Mejorando la Colaboración en Equipos Ágiles</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="exvideos14">
+                            Cómo fomentar la colaboración efectiva en equipos ágiles para mejorar la gestión de proyectos.
+                        </p>
+                        <div class="mt-4">
+                            <iframe width="100%" height="290" src="https://www.youtube.com/embed/rHOvlOBdXZM?si=V0sWWVxeO4_neiMy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+
+            <!-- Sección 3: casos -->
+            <section id="casos" class="section bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-3xl font-bold text-white text-center mb-4" data-i18n="excasos1">✨ Casos de Estudio Inspiradores</h2>
+                <p class="text-gray-400 text-center mb-6" data-i18n="excasos2">Descubre cómo empresas innovadoras han transformado sus proyectos a través de la gestión personalizada.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-2" data-i18n="excasos3">1. Innovación en la Industria Alimentaria</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="excasos4">Una empresa de alimentos implementó un gestor de proyectos personalizado que optimizó su cadena de suministro, reduciendo el tiempo de entrega en un 30% y mejorando la satisfacción del cliente.</p>
+                        <a  class="inline-block mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300" data-i18n="excasos5">Leer Más</a>
+                    </article>
+            
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-2" data-i18n="excasos6">2. Transformación Digital en el Sector Salud</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="excasos7">Un hospital adoptó un sistema de gestión de proyectos a medida que mejoró la eficiencia operativa en un 40%, ofreciendo una atención al paciente más integrada y personalizada.</p>
+                        <a class="inline-block mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300" data-i18n="excasos5">Leer Más</a>
+                    </article>
+            
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-2" data-i18n="excasos8">3. Sostenibilidad en la Construcción</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="excasos9">Una empresa constructora utilizó un gestor de proyectos adaptado a sus necesidades, implementando prácticas sostenibles que redujeron su huella de carbono y atrajeron nuevos clientes.</p>
+                        <a  class="inline-block mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300" data-i18n="excasos5">Leer Más</a>
+                    </article>
+            
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-2" data-i18n="excasos10">4. Eficiencia Energética en el Sector Industrial</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="excasos11">Una fábrica implementó un sistema personalizado que identificó áreas de mejora en su consumo energético, logrando una reducción del 25% en costos operativos.</p>
+                        <a class="inline-block mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300" data-i18n="excasos5">Leer Más</a>
+                    </article>
+                </div>
+            
+                <div class="mt-8 text-center">
+                    <button class="bg-green-500 text-white py-3 px-6 rounded-full shadow-md hover:bg-green-600 transition-colors duration-300" data-i18n="excasos12">Ver Todos los Casos</button>
+                </div>
+            </section>
+            
+
+            <!-- Sección 4: ideas -->
+            <section id="ideas" class="section bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-3xl font-bold text-white text-center mb-4" data-i18n="exideas1">💡 Ideas para Integrar Innovación en los Proyectos</h2>
+                <p class="text-gray-300 text-center mb-6" data-i18n="exideas2">La innovación es clave para el éxito de cualquier proyecto empresarial. Aquí te presentamos algunas ideas creativas para integrarla eficazmente:</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas3">1. 🚀Fomentar la Cultura de Innovación</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas4">Crea un entorno donde todos los miembros del equipo se sientan cómodos compartiendo ideas. Realiza sesiones de brainstorming periódicas y utiliza técnicas como el "design thinking".</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas5">2. 🤖Implementar Tecnologías Emergentes</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas6">Explora el uso de inteligencia artificial, análisis de datos y automatización para optimizar procesos y mejorar la toma de decisiones.</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas7">3. 🤝Colaboraciones Interdisciplinarias</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas8">Invita a expertos de diferentes áreas a colaborar en tus proyectos. La diversidad de perspectivas puede generar soluciones innovadoras.</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas9">4. ⚙️Prototipado Rápido</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas10">Desarrolla prototipos funcionales rápidamente para probar ideas antes de implementarlas a gran escala. Esto permite iterar y ajustar según la retroalimentación recibida.</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas11">5. 📚Capacitación Continua</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas12">Ofrece formación regular en nuevas herramientas y metodologías. Mantener al equipo actualizado es fundamental para fomentar la innovación.</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas13">6. 🗣️Escucha Activa a los Clientes</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas14">Recoge feedback constante de los clientes y utilízalo para mejorar los productos o servicios ofrecidos. La voz del cliente es una fuente invaluable de innovación.</p>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-bold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="exideas15">7. 🎨Espacios Creativos</span> 
+                        </h3>
+                        <p class="text-gray-300" data-i18n="exideas16">Crea espacios físicos o virtuales que fomenten la creatividad, como salas de descanso inspiradoras o plataformas digitales para compartir ideas.</p>
+                    </div>
+                </div>
+            
+                <footer class="mt-8 border-t border-gray-600 pt-4 text-center">
+                    <p class="text-gray-500 text-sm italic" data-i18n="exideas17">Estas ideas son solo el comienzo. La clave está en experimentar y adaptarse a las necesidades específicas de tu proyecto.</p>
+                </footer>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-3 mt-4">
+        <div class="container mx-auto text-center">
+            <p data-i18n="recofooter">&copy; 2025. Derechos reservados. Pedro Janco Achacollo</p>
+            <div class="social-icons mt-3 flex justify-center space-x-4">
+                <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>   

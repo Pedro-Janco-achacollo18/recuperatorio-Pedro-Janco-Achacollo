@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="recotitulo">Recomendaciones </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        .navbar {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+        .section {
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar fixed top-0 left-0 right-0 p-4 bg-gray-800 shadow-lg z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-white text-2xl font-bold">P. J. A.</div>    
+            <!-- Selector de idioma -->
+            <div>
+                <select id="language-selector" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>          
+                </select>
+            </div>       
+            <!-- Botón para mostrar el menú en dispositivos móviles -->
+            <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>    
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent absolute md:static top-16 left-0 right-0 w-full md:w-auto px-4 md:px-0 py-4 md:py-0 shadow-lg md:shadow-none">
+                <li><a href="#articulos" class="block text-gray-300 hover:text-white" data-i18n="recomenu1">Artículos</a></li>
+                <li><a href="#consejos" class="block text-gray-300 hover:text-white" data-i18n="recomenu2">Consejos</a></li>
+                <li><a href="#videos" class="block text-gray-300 hover:text-white" data-i18n="recomenu3">Videos</a></li>
+                <li><a href="#proveedores" class="block text-gray-300 hover:text-white" data-i18n="recomenu4">Proveedores</a></li>
+                <li><a href="index.html" class="bg-blue-600 text-white px-3 py-2 rounded"><i class="fas fa-home mr-2"></i> Menu</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+    <!--scrip para la internalizacion del contenido-->
+        <script>
+            //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                var name = keys[i].getAttribute("name");
+                var value = keys[i].getElementsByTagName(language)[0].textContent;
+                translations[name] = value;
+                }
+
+                i18next.init(
+                {
+                    lng: language,
+                    resources: {
+                    [language]: {
+                        translation: translations,
+                    },
+                    },
+                },
+                function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                    });
+                }
+                );
+            }
+            };
+            xhr.send();
+        }
+
+        // Cambiar idioma con el selector
+        document.getElementById("language-selector").addEventListener("change", function () {
+            loadTranslations(this.value);
+        });
+
+        // Idioma predeterminado al cargar la página
+        window.onload = function () {
+            loadTranslations("es");
+        };
+        </script>
+        <!--Aqui termina el script de la internalizacion del contenido-->
+
+    <!-- Contenido principal -->
+    <div class="pt-20"> <!-- Espacio para el menú fijo -->
+        <!-- Sección de inicio -->
+        <section id="inicio" class="relative mb-8">
+            <!-- Imagen de fondo -->
+            <img src="imgsub/fondo2.avif" 
+                 alt="Fondo" 
+                 class="w-full h-[60vh] md:h-[80vh] object-cover filter brightness-75 rounded-lg shadow-lg">
+            <!-- Texto superpuesto -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 animate_animated animate_fadeIn" 
+                    data-i18n="recobienvenida">
+                    Recomendaciones
+                </h1>
+            </div>
+        </section>
+
+        <!-- Secciones -->
+        <div class="mt-4 space-y-6 px-4 md:px-8">
+            <!-- Sección 1: Artículos -->
+            <section id="articulos" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+                <h2 class="text-2xl font-semibold mb-4 text-center" data-i18n="recoarticulos1">Artículos sobre Gestión Eficiente de Proyectos</h2>
+                <p class="text-center text-gray-300 mb-6" data-i18n="recoarticulos2">
+                    Descubre estrategias y prácticas recomendadas para mejorar la gestión de tus proyectos empresariales personalizados.
+                </p>
+                
+                <!-- Lista de artículos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Artículo 1 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos3">1. Planificación Estratégica</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoarticulos4">
+                            Aprende cómo estructurar un plan estratégico efectivo que maximice la eficiencia y minimice los riesgos en tus proyectos.
+                        </p>
+                    </article>
+            
+                    <!-- Artículo 2 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos5">2. Gestión del Tiempo</h3>
+                        <p class="text-gray-300 mt-2"data-i18n="recoarticulos6">
+                            Técnicas y herramientas para optimizar el tiempo de ejecución de tus proyectos sin comprometer la calidad.
+                        </p>
+                    </article>
+            
+                    <!-- Artículo 3 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos7">3. Comunicación Efectiva</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoarticulos8">
+                            Cómo establecer una comunicación clara y efectiva entre los miembros del equipo para garantizar el éxito del proyecto.
+                        </p>
+                    </article>
+            
+                    <!-- Artículo 4 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos9">4. Evaluación de Riesgos</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoarticulos10">
+                            Identifica, analiza y mitiga riesgos potenciales que puedan afectar los resultados del proyecto.
+                        </p>
+                    </article>
+            
+                    <!-- Artículo 5 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos11">5. Uso de Tecnología en Proyectos</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoarticulos12">
+                            Explora las herramientas tecnológicas más innovadoras para la gestión de proyectos empresariales personalizados.
+                        </p>
+                    </article>
+            
+                    <!-- Artículo 6 -->
+                    <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoarticulos13">6. Seguimiento y Control</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoarticulos14">
+                            Descubre cómo monitorear el progreso de tus proyectos para asegurarte de que cumplan con los objetivos establecidos.
+                        </p>
+                    </article>
+                </div>
+            </section>
+            
+
+            <!-- Sección 2: Consejos -->
+            <section id="consejos" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+                <h2 class="text-2xl font-semibold mb-4 text-center text-white" data-i18n="recoconsejos1">Consejos para Optimizar Recursos</h2>
+                <p class="text-center text-gray-300 mb-6" data-i18n="recoconsejos2">
+                    Mejora la eficiencia de tus proyectos empresariales personalizados con estos consejos prácticos.
+                </p>
+                
+                <!-- Lista de consejos -->
+                <div class="space-y-6">
+                    <!-- Consejo 1 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-green-400" data-i18n="recoconsejos3">1. Prioriza las tareas esenciales</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoconsejos4">
+                            Identifica y enfoca los recursos en las tareas que generen mayor valor para el proyecto. Usa herramientas de priorización como la matriz de Eisenhower.
+                        </p>
+                    </div>
+            
+                    <!-- Consejo 2 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-green-400" data-i18n="recoconsejos5">2. Automatiza procesos repetitivos</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoconsejos6">
+                            Implementa herramientas tecnológicas que permitan automatizar procesos como la asignación de tareas, reportes de progreso y seguimiento de gastos.
+                        </p>
+                    </div>
+            
+                    <!-- Consejo 3 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-green-400" data-i18n="recoconsejos7">3. Evalúa y optimiza el presupuesto</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoconsejos8">
+                            Revisa periódicamente el presupuesto del proyecto y ajusta áreas donde los recursos puedan estar infrautilizados o mal asignados.
+                        </p>
+                    </div>
+            
+                    <!-- Consejo 4 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-green-400" data-i18n="recoconsejos9">4. Fomenta la comunicación eficaz</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoconsejos10">
+                            Una buena comunicación entre los miembros del equipo ayuda a evitar malentendidos y duplicación de esfuerzos, maximizando el uso de recursos.
+                        </p>
+                    </div>
+            
+                    <!-- Consejo 5 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-green-400" data-i18n="recoconsejos11">5. Capacita a tu equipo</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoconsejos12">
+                            Invierte en la formación de los integrantes del equipo para que puedan trabajar de manera más eficiente y adaptable a las necesidades del proyecto.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Sección 3: Videos -->
+        <section id="videos" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+            <h2 class="text-2xl font-semibold mb-4 text-center" data-i18n="recovideos1">Videos sobre Casos de Éxito</h2>
+            <p class="text-center text-gray-300 mb-6"data-i18n="recovideos2">
+                Inspírate con historias reales de éxito en la gestión de proyectos empresariales en diferentes sectores.
+            </p>
+            
+            <!-- Lista de videos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Video 1 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold text-blue-400" data-i18n="recovideos3">1. Tecnología e Innovación</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos4">
+                        Conoce cómo una startup tecnológica optimizó sus procesos para lograr un crecimiento exponencial.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/B3oL3McrElg?si=uXSYGa9SvmroBmgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Video 2 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold text-blue-400" data-i18n="recovideos5">2. Proyectos en Construcción</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos6">
+                        Descubre cómo una empresa constructora completó con éxito un megaproyecto en tiempo récord.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/fxxX6VwKwk8?si=Phs_cCCA7X0up0zl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Video 3 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold text-blue-400"data-i18n="recovideos7">3. Gestión en Retail</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos8">
+                        Aprende cómo una cadena de tiendas mejoró la experiencia del cliente con estrategias personalizadas.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/FbVCp8pgs98?si=knQHNA-kmpXdyV7D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Video 4 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold text-blue-400" data-i18n="recovideos9">4. Industria Alimentaria</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos10">
+                        Caso de éxito: Cómo una empresa alimentaria optimizó su cadena de suministro y producción.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/0QJAyG-SlLg?si=Xh13UggIzruLNdcz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Video 5 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                    <h3 class="text-lg font-semibold text-blue-400" data-i18n="recovideos11">5. Energía Renovable</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos12">
+                        Cómo un proyecto de energía solar escaló su impacto global con una gestión eficiente.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/OSN5SRa_BH0?si=KboE9f6ejCirrMr6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Video 6 -->
+                <article class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">                    
+                    <h3 class="text-lg font-semibold text-blue-400" data-i18n="recovideos13">6. Educación Digital</h3>
+                    <p class="text-gray-300 mt-2" data-i18n="recovideos14">
+                        Historias de éxito en proyectos educativos que aprovecharon la tecnología para enseñar a distancia.
+                    </p>
+                    <div class="mt-4">
+                        <iframe width="100%" height="290" src="https://www.youtube.com/embed/8lQajAZ5hbE?si=Y0EhrePOoA8vuapD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <!--<iframe width="100%" height="315" src="https://youtu.be/8lQajAZ5hbE?si=Y0EhrePOoA8vuapD" frameborder="0" allowfullscreen></iframe>-->
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+
+            <!-- Sección 4: Proveedores -->
+            <section id="proveedores" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+                <h2 class="text-2xl font-semibold mb-4 text-center" data-i18n="recoproveedores1">Proveedores Recomendados de Software de Gestión</h2>
+                <p class="text-center text-gray-300 mb-6" data-i18n="recoproveedores2">
+                    Descubre las mejores opciones en software de gestión empresarial para optimizar tus proyectos.
+                </p>
+                
+                <!-- Lista de proveedores -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proveedor 1 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores3">1. Asana</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores4">
+                            Herramienta versátil para la gestión de tareas y proyectos, ideal para equipos colaborativos.
+                        </p>
+                        <a href="https://asana.com/" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+            
+                    <!-- Proveedor 2 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores5">2. Trello</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores6">
+                            Software intuitivo basado en tableros Kanban para organizar proyectos de manera visual.
+                        </p>
+                        <a href="https://trello.com/" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+            
+                    <!-- Proveedor 3 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores7">3. Monday.com</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores8">
+                            Plataforma personalizable para la gestión de proyectos y flujo de trabajo empresarial.
+                        </p>
+                        <a href="https://monday.com/" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+            
+                    <!-- Proveedor 4 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores9">4. Zoho Projects</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores10">
+                            Una solución integral que combina gestión de tareas, cronogramas y reportes avanzados.
+                        </p>
+                        <a href="https://www.zoho.com/projects/" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+            
+                    <!-- Proveedor 5 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores11">5. Jira</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores12">
+                            Software diseñado para la planificación ágil y la gestión de proyectos de desarrollo.
+                        </p>
+                        <a href="https://www.atlassian.com/software/jira" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+            
+                    <!-- Proveedor 6 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-400" data-i18n="recoproveedores13">6. ClickUp</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="recoproveedores14">
+                            Una herramienta todo-en-uno para la gestión de proyectos, tareas y objetivos empresariales.
+                        </p>
+                        <a href="https://clickup.com/" target="_blank" class="text-blue-500 hover:underline mt-2 block" data-i18n="recoproveedores15">Visitar sitio web</a>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-3 mt-4">
+        <div class="container mx-auto text-center">
+            <p data-i18n="recofooter">2025. Derechos reservados. Pedro Janco Achacollo</p>
+            <div class="social-icons mt-3 flex justify-center space-x-4">
+                <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

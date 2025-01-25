@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="det-titulo">Detalles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Bootstrap JS y Popper.js -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #29294c;
+            color: #eaeaea;
+        }
+
+        .navbar {
+            background-color: #0b0b18;
+        }
+
+        .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-link:hover {
+            color: #00bfff;
+        }
+
+        .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar p-3 navbar-expand-lg fixed-top shadow-lg">
+        <div class="container">
+          <a class="navbar-brand text-white font-bold text-2xl" href="#">P. J. A.</a>
+           <!-- Selector de idioma centrado -->
+           <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+            <select id="language-selector" class="form-select d-inline-block w-auto">
+              <option value="es" selected>Español</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+           
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#fases" data-i18n="detalles1">Fases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#cronograma" data-i18n="detalles2">Cronograma </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#recursos" data-i18n="detalles3">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#plan" data-i18n="detalles4">Plan</a>
+                    </li>
+                    <li >
+                      <button onclick="history.back()" class="btn btn-secondary w-100 py-2 mt-3 fw-bold">Atrás</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+      <!--scrip para la internalizacion del contenido-->
+    <script>
+        //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+             if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+   
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                    var name = keys[i].getAttribute("name");
+                    var value = keys[i].getElementsByTagName(language)[0].textContent;
+                    translations[name] = value;
+                }
+   
+            i18next.init(
+               {
+                 lng: language,
+                 resources: {
+                   [language]: {
+                     translation: translations,
+                   },
+                 },
+               },
+               function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                     });
+                }
+                );
+             }
+            };
+            xhr.send();
+        }   
+   
+       // Cambiar idioma con el selector
+       document.getElementById("language-selector").addEventListener("change", function () {
+         loadTranslations(this.value);
+       });
+   
+       // Idioma predeterminado al cargar la página
+       window.onload = function () {
+         loadTranslations("es");
+       };
+    </script>
+
+    <section id="inicio" class="relative mb-8">
+      <img src="imgsub/fondo2.avif" alt="Fondo" class="w-full h-screen object-cover filter brightness-75 shadow-lg">
+      <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-16">
+        <!-- Título centrado vertical y horizontalmente -->
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold animate_animated animate_fadeIn transform -translate-x-1/2 -translate-y-1/2 absolute left-1/2 top-1/2" data-i18n="bienvenido1">Bienvenido a detalles del proyecto </h1>
+      </div>
+    </section>
+
+
+    <section id="fases-principales" class="py-5 bg-gradient-to-b from-gray-800 via-gray-900 to-black text-light">
+        <div class="container">
+          <!-- Encabezado -->
+          <div class="text-center mb-5">
+            <h2 class="display-5 font-semibold text-white mt-5" data-i18n="detalles5">Fases Principales y Entregables</h2>
+            <p class="lead text-gray-300" data-i18n="detalles6">
+              Descubre cómo hemos organizado las fases del proyecto para asegurar un progreso claro y estructurado.
+            </p>
+          </div>
+      
+          <!-- Fases Principales -->
+          <div class="row gy-4">
+            <!-- Fase 1 -->
+            <div class="col-md-4">
+              <div class="card bg-black text-light border-0 shadow-lg h-100">
+                <img src="img/inicio.jpg" alt="Inicio del Proyecto" class="card-img-top rounded-top h-50">
+                <div class="card-body">
+                  <h5 class="card-title font-semibold text-white" data-i18n="detalles7">Inicio del Proyecto</h5>
+                  <p class="card-text" data-i18n="detalles8">
+                    Análisis de requisitos y definición de objetivos para sentar las bases del proyecto.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Fase 2 -->
+            <div class="col-md-4">
+              <div class="card bg-black text-light border-0 shadow-lg h-100">
+                <img src="img/desarrollo.jpg" alt="Desarrollo" class="card-img-top rounded-top h-100">
+                <div class="card-body">
+                  <h5 class="card-title font-semibold text-white" data-i18n="detalles9">Desarrollo</h5>
+                  <p class="card-text" data-i18n="detalles10">
+                    Implementación de funcionalidades clave con un enfoque en calidad y escalabilidad.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Fase 3 -->
+            <div class="col-md-4">
+              <div class="card bg-black text-light border-0 shadow-lg h-100">
+                <img src="img/fin.png"  alt="Cierre del Proyecto" class="card-img-top rounded-top">
+                <div class="card-body">
+                  <h5 class="card-title font-semibold text-white" data-i18n="detalles11">Cierre del Proyecto</h5>
+                  <p class="card-text" data-i18n="detalles12">
+                    Validación, entrega final y documentación del proyecto para garantizar el éxito.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="cronograma" class="py-10 bg-gradient-to-b from-gray-800 via-gray-900 to-black text-gray-200">
+        <div class="container mx-auto">
+          <!-- Título -->
+          <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-white" data-i18n="detalles13">Cronograma Tentativo</h2>
+            <p class="mt-2 text-gray-400" data-i18n="detalles14">
+              Explora cada fase del proyecto y descubre su descripción detallada.
+            </p>
+          </div>
+      
+          <!-- Botones para seleccionar fases -->
+          <div class="flex flex-wrap justify-center gap-4 mb-6">
+            <button onclick="showPhase('fase1')" data-i18n="fase1" class="px-4 py-2 bg-yellow-500 text-black font-semibold rounded shadow hover:bg-yellow-600">
+              Fase 1: Análisis
+            </button>
+            <button onclick="showPhase('fase2')" data-i18n="fase4" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow hover:bg-blue-600">
+              Fase 2: Diseño
+            </button>
+            <button onclick="showPhase('fase3')" data-i18n="fase7" class="px-4 py-2 bg-green-500 text-white font-semibold rounded shadow hover:bg-green-600">
+              Fase 3: Desarrollo
+            </button>
+            <button onclick="showPhase('fase4')" data-i18n="detalles166" class="px-4 py-2 bg-purple-500 text-white font-semibold rounded shadow hover:bg-purple-600">
+              Fase 4: Validación
+            </button>
+            <button onclick="showPhase('fase5')" data-i18n="detalles199" class="px-4 py-2 bg-pink-500 text-white font-semibold rounded shadow hover:bg-pink-600">
+              Fase 5: Implementación
+            </button>
+          </div>
+      
+          <!-- Contenedores de información de las fases -->
+          <div id="fase1" class="hidden p-6 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-yellow-500" data-i18n="fase1">Fase 1: Análisis</h3>
+            <p class="mt-4 text-gray-300" data-i18n="fase2">
+              En esta fase se identifican los objetivos del proyecto, se recopilan requisitos clave y se define el alcance general.
+            </p>
+            <p class="mt-2 text-sm font-semibold text-yellow-400" data-i18n="fase3">Duración estimada: 2-4 semanas</p>
+          </div>
+      
+          <div id="fase2" class="hidden p-6 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-blue-500" data-i18n="fase4">Fase 2: Diseño</h3>
+            <p class="mt-4 text-gray-300" data-i18n="fase5">
+              Se crean prototipos y estructuras técnicas, definiendo las principales funcionalidades y la interfaz del sistema.
+            </p>
+            <p class="mt-2 text-sm font-semibold text-blue-400" data-i18n="fase6">Duración estimada: 3-5 semanas</p>
+          </div>
+      
+          <div id="fase3" class="hidden p-6 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-green-500" data-i18n="fase7">Fase 3: Desarrollo</h3>
+            <p class="mt-4 text-gray-300" data-i18n="fase8">
+              En esta etapa se implementan las funcionalidades principales y se construye el sistema completo.
+            </p>
+            <p class="mt-2 text-sm font-semibold text-green-400" data-i18n="detalles15">Duración estimada: 8-12 semanas</p>
+          </div>
+      
+          <div id="fase4" class="hidden p-6 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-purple-500" data-i18n="detalles166">Fase 4: Validación</h3>
+            <p class="mt-4 text-gray-300" data-i18n="detalles17">
+              Se realizan pruebas exhaustivas, se corrigen errores y se asegura que el sistema cumple con las expectativas.
+            </p>
+            <p class="mt-2 text-sm font-semibold text-purple-400" data-i18n="detalles18">Duración estimada: 2-4 semanas</p>
+          </div>
+      
+          <div id="fase5" class="hidden p-6 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-pink-500" data-i18n="detalles199">Fase 5: Implementación</h3>
+            <p class="mt-4 text-gray-300" data-i18n="detalles20">
+              Se entrega el sistema al cliente, se capacita a los usuarios y se ofrece soporte inicial para garantizar su adopción exitosa.
+            </p>
+            <p class="mt-2 text-sm font-semibold text-pink-400" data-i18n="detalles21">Duración estimada: 1-3 semanas</p>
+          </div>
+        </div>
+      </section>
+      
+      <script>
+        function showPhase(phaseId) {
+          // Oculta todas las fases
+          const phases = document.querySelectorAll("#cronograma > .container > div.hidden");
+          phases.forEach((el) => el.classList.add("hidden"));
+      
+          // Muestra la fase seleccionada
+          const selectedPhase = document.getElementById(phaseId);
+          if (selectedPhase) {
+            selectedPhase.classList.remove("hidden");
+          }
+        }
+      </script>
+      
+      
+      
+        <!-- Recursos Necesarios -->
+        <section id="recursos" class="py-12 bg-gradient-to-b from-gray-800 via-gray-900 to-black text-gray-200">
+            <div class="container mx-auto">
+              <!-- Título -->
+              <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-white" data-i18n="detalles22">Recursos Necesarios</h2>
+                <p class="mt-4 text-lg text-gray-400" data-i18n="detalles23">
+                  Contamos con un equipo especializado y las herramientas necesarias para garantizar el éxito del proyecto.
+                </p>
+              </div>
+          
+              <!-- Contenido -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Sección del Equipo -->
+                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                  <h3 class="text-3xl font-bold text-yellow-400 mb-4" data-i18n="detalles24">Nuestro Equipo Especializado</h3>
+                  <p class="text-lg text-gray-300 mb-6" data-i18n="detalles25">
+                    Nuestro equipo está compuesto por profesionales altamente capacitados que se encargan de cada aspecto del proyecto.
+                    Con una amplia experiencia en desarrollo, diseño y gestión, trabajamos juntos para garantizar resultados excepcionales.
+                  </p>
+                  <div class="flex space-x-6">
+                    <!-- Imagen 1 -->
+                    <div class="text-center">
+                      <img src="img/desa.jpeg" alt="Desarrollador" class="w-32 h-32 rounded-full mx-auto mb-2">
+                      <p class="text-sm text-gray-400" data-i18n="detalles26">5 Desarrolladores</p>
+                    </div>
+                    <!-- Imagen 2 -->
+                    <div class="text-center">
+                      <img src="img/diseñador.jpg" alt="Diseñador" class="w-32 h-32 rounded-full mx-auto mb-2">
+                      <p class="text-sm text-gray-400" data-i18n="detalles27">2 Diseñadores</p>
+                    </div>
+                  </div>
+                </div>
+          
+                <!-- Sección de Recursos -->
+                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                  <h3 class="text-3xl font-bold text-teal-400 mb-4" data-i18n="detalles28">Recursos Necesarios para el Proyecto</h3>
+                  <p class="text-lg text-gray-300 mb-6" data-i18n="detalles29">
+                    Para garantizar el éxito del proyecto, hemos identificado los recursos clave necesarios para llevar a cabo cada fase con eficiencia y precisión.
+                  </p>
+          
+                  <ul class="space-y-4">
+                    <!-- Elemento 1: Herramientas -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <img src="img/herra.jpeg" alt="Herramienta" class="w-8 h-8">
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles30">Herramientas:</p>
+                        <p class="text-gray-400" data-i18n="detalles31">Software de gestión de proyectos como Jira y Trello para organizar tareas y mantener el flujo de trabajo.</p>
+                      </div>
+                    </li>
+                    
+                    <!-- Elemento 2: Personal -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <img src="img/personal.jpeg" alt="Personal" class="w-8 h-8">
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles32">Personal:</p>
+                        <p class="text-gray-400" data-i18n="detalles33">Contamos con un equipo diverso: 5 desarrolladores, 2 diseñadores, y un equipo de gestión altamente cualificado.</p>
+                      </div>
+                    </li>
+                    
+                    <!-- Elemento 3: Presupuesto -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <img src="img/presu.jpg" alt="Presupuesto" class="w-8 h-8">
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles333">Presupuesto:</p>
+                        <p class="text-gray-400" data-i18n="detalles34">Un presupuesto inicial de $50,000 USD destinado a recursos, herramientas, y personal altamente capacitado.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+          
+              </div>
+            </div>
+          </section>
+          
+      
+          <!-- Plan de Comunicación y Reportes -->
+          <section id="plan" class="py-12 bg-gradient-to-b from-gray-800 via-gray-900 to-black text-gray-200">
+            <div class="container mx-auto">
+              <!-- Título -->
+              <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-white" data-i18n="detalles35">Plan de Comunicación y Reportes</h2>
+                <p class="mt-4 text-lg text-gray-400" data-i18n="detalles36">
+                  Nuestro plan de comunicación asegura que todas las partes interesadas estén bien informadas a lo largo del proyecto.
+                </p>
+              </div>
+          
+              <!-- Detalles del plan -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+                <!-- Sección de Canales de Comunicación -->
+                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                  <h3 class="text-3xl font-bold text-yellow-400 mb-4" data-i18n="detalles37">Canales de Comunicación</h3>
+                  <p class="text-lg text-gray-300 mb-6" data-i18n="detalles38">
+                    Utilizamos una variedad de canales para garantizar que todos los miembros del equipo y las partes interesadas estén al tanto del progreso del proyecto.
+                  </p>
+                  <ul class="space-y-4">
+                    <!-- Canal 1: Reuniones Semanales -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users w-8 h-8 text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles39">Reuniones Semanales:</p>
+                        <p class="text-gray-400" data-i18n="detalles40">Reuniones virtuales o presenciales para revisar el progreso, resolver dudas y ajustar el plan de acción según sea necesario.</p>
+                      </div>
+                    </li>
+                    
+                    <!-- Canal 2: Correos Electrónicos -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-envelope w-8 h-8 text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles41">Correos Electrónicos:</p>
+                        <p class="text-gray-400" data-i18n="detalles42">Envío de resúmenes detallados y actualizaciones sobre el estado del proyecto a los interesados clave.</p>
+                      </div>
+                    </li>
+          
+                    <!-- Canal 3: Plataforma de Gestión -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-trello w-8 h-8 text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles43">Plataforma de Gestión:</p>
+                        <p class="text-gray-400" data-i18n="detalles44">Herramientas como Jira o Trello para seguimiento en tiempo real, gestión de tareas y asignación de responsabilidades.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+          
+                <!-- Sección de Frecuencia y Responsables -->
+                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                  <h3 class="text-3xl font-bold text-teal-400 mb-4" data-i18n="detalles45">Frecuencia y Responsables</h3>
+                  <p class="text-lg text-gray-300 mb-6" data-i18n="detalles46">
+                    La frecuencia de los reportes y las reuniones está diseñada para garantizar la alineación continua entre el equipo y los interesados.
+                  </p>
+          
+                  <ul class="space-y-4">
+                    <!-- Frecuencia 1: Reportes Mensuales -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-calendar-check w-8 h-8 text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles47">Reportes Mensuales:</p>
+                        <p class="text-gray-400" data-i18n="detalles48">El equipo de gestión enviará reportes mensuales con un resumen detallado del progreso, hitos alcanzados y próximos pasos.</p>
+                      </div>
+                    </li>
+          
+                    <!-- Frecuencia 2: Reuniones Semanales -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-calendar-alt w-8 h-8 text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles49">Reuniones Semanales:</p>
+                        <p class="text-gray-400" data-i18n="detalles50">Cada semana se celebrará una reunión de revisión con el equipo, donde se discutirán los avances y se tomarán decisiones sobre posibles ajustes.</p>
+                      </div>
+                    </li>
+          
+                    <!-- Responsable: Coordinador del Proyecto -->
+                    <li class="flex items-center space-x-4">
+                      <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-tie w-8 h-8 text-white"></i>
+                      </div> 
+                      <div>
+                        <p class="text-xl text-white font-semibold" data-i18n="detalles51">Responsable:</p>
+                        <p class="text-gray-400" data-i18n="detalles52">El Coordinador del Proyecto será el encargado de gestionar las comunicaciones, asegurando que la información fluya de manera eficiente entre los miembros del equipo y las partes interesadas.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+          
+              </div>
+            </div>
+          </section>
+          
+          
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-3 mt-4">
+            <div class="container mx-auto text-center">
+                <p data-i18n="footer"> 2025. Derechos reservados. Pedro Janco Achacollo</p>
+                <div class="social-icons mt-3 flex justify-center space-x-4">
+                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+</body>
+
+</html>

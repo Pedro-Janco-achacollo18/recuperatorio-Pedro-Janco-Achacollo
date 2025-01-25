@@ -1,0 +1,1654 @@
+<traslations>
+    <key name="titulo">
+    <es>Gestor de proyectos</es>
+    <en>Project manager</en>
+    </key>
+
+    <key name="index1">
+    <es>BIENVENIDO ADMINISTRADOR</es>
+    <en>Custom Business Project Manager</en>
+    </key>
+
+    <key name="index2">
+    <es>Transformamos tus ideas en proyectos exitosos con un enfoque único y personalizado.</es>
+    <en>We transform your ideas into successful projects with a unique and personalized approach.</en>
+    </key>
+
+    <key name="index3">
+    <es>Funcionalidades Principales</es>
+    <en>Main Features</en>
+    </key>
+
+    <key name="index4">
+    <es>Gestión Integral de Proyectos</es>
+    <en>Comprehensive Project Management</en>
+    </key>
+
+    <key name="index5">
+    <es>Controla todas las fases de tus proyectos de forma eficiente con herramientas intuitivas y potentes.</es>
+    <en>Control all phases of your projects efficiently with intuitive and powerful tools</en>
+    </key>
+
+    <key name="index6">
+    <es>Colaboración en Equipo</es>
+    <en>Team Collaboration</en>
+    </key>
+
+    <key name="index7">
+    <es>Fomenta la colaboración entre equipos con un espacio centralizado para compartir ideas y tareas.</es>
+    <en>Encourage collaboration between teams with a centralized space to share ideas and tasks.</en>
+    </key>
+
+    <key name="index8">
+    <es>Planificación de Tareas</es>
+    <en>Task Planning</en>
+    </key>
+
+    <key name="index9">
+    <es>Configura cronogramas detallados para cada tarea, asegurando que el proyecto avance según lo planificado.</es>
+    <en>Set up detailed schedules for each task, ensuring the project progresses as planned</en>
+    </key>
+
+    <key name="index10">
+    <es>Plan de Comunicación y Reportes</es>
+    <en>Communication and Reporting Plan</en>
+    </key>
+
+    <key name="index11">
+    <es>Mantenemos una comunicación constante para asegurar que todos los interesados estén al tanto del progreso del proyecto. 
+        Nuestro objetivo es mantenerte informado en cada etapa del proceso con la máxima transparencia.</es>
+    <en>We maintain constant communication to ensure that all stakeholders are aware of the progress of the project. 
+        Our goal is to keep you informed at every stage of the process with maximum transparency.</en>
+    </key>
+
+    <key name="index12">
+    <es>Reuniones Semanales</es>
+    <en>Weekly Meetings</en>
+    </key>
+
+    <key name="index13">
+    <es>Reuniones regulares con todos los miembros del proyecto para asegurar que se mantenga el enfoque adecuado.</es>
+    <en>Regular meetings with all project members to ensure proper focus is maintained.</en>
+    </key>
+
+    <key name="index14">
+    <es>Correos Electrónicos</es>
+    <en>Emails</en>
+    </key>
+
+    <key name="index15">
+    <es>Enviamos reportes semanales y notificaciones clave por correo electrónico a todos los interesados.</es>
+    <en>We send weekly reports and key notifications by email to all stakeholders.</en>
+    </key>
+
+    <key name="index16">
+    <es>Reportes de Progreso</es>
+    <en>Progress Reports</en>
+    </key>
+
+    <key name="index17">
+    <es>Informes detallados del avance del proyecto, asegurando que todas las métricas clave se monitoreen y se compartan oportunamente.</es>
+    <en>Detailed project progress reporting, ensuring all key metrics are monitored and shared in a timely manner</en>
+    </key>
+
+    <key name="index18">
+    <es>Ver Detalles</es>
+    <en>See Details</en>
+    </key>
+
+    <key name="index19">
+    <es>¿Listo para empezar tu proyecto?</es>
+    <en>Ready to start your project?</en>
+    </key>
+
+    <key name="index20">
+    <es>Contáctanos para obtener más información o empezar con tu proyecto personalizado.</es>
+    <en>Contact us for more information or to get started on your custom project.</en>
+    </key>
+
+    <key name="index21">
+    <es>Contáctanos</es>
+    <en>Contact us</en>
+    </key>
+
+    <key name="footer">
+    <es>2025. Derechos reservados. Pedro Janco Achacollo</es>
+    <en>2025. All rights reserved. Pedro Janco Achacollo</en>
+    </key>
+<!--realizamos la traduccion para el menu inicio-->
+    <key name="inititulo">
+    <es>Inicio</es>
+    <en>Home</en>
+    </key>
+
+    <key name="inicio1">
+    <es>Descripción</es>
+    <en>Description</en>
+    </key>
+
+    <key name="inicio2">
+    <es>Importancia</es>
+    <en>Importance</en>
+    </key>
+
+    <key name="inicio3">
+    <es>Personalizar</es>
+    <en>Personalize</en>
+    </key>
+
+    <key name="inicio4">
+    <es>Preguntas frecuentes</es>
+    <en>Frequently asked questions</en>
+    </key>
+
+    <key name="inicio5">
+    <es>Menu</es>
+    <en>Menu</en>
+    </key>
+
+    <key name="inicio6">
+    <es>Gestión de Proyectos Empresariales Personalizados</es>
+    <en>Custom Business Project Management</en>
+    </key>
+
+    <key name="inicio7">
+    <es>Optimiza el éxito empresarial con un enfoque adaptado a tus necesidades</es>
+    <en>Optimize business success with an approach tailored to your needs</en>
+    </key>
+
+    <key name="inicio8">
+    <es>Comienza Ahora</es>
+    <en>Start Now</en>
+    </key>
+
+    <key name="inicio9">
+    <es>Descripción del servicio de gestión de proyectos</es>
+    <en>Project Management Service Description</en>
+    </key>
+
+    <key name="inicio10">
+    <es>Descubre cómo nuestros servicios pueden ayudarte a alcanzar el éxito empresarial a través de una gestión eficiente y personalizada</es>
+    <en>Discover how our services can help you achieve business success through efficient and personalized management</en>
+    </key>
+
+    <key name="inicio11">
+    <es>Importancia de la Gestión</es>
+    <en>Importance of Management</en>
+    </key>
+
+    <key name="inicio12">
+    <es>La gestión adecuada asegura que los recursos se utilicen de manera efectiva, reduciendo riesgos y optimizando resultados.</es>
+    <en>Proper management ensures that resources are used effectively, reducing risks and optimizing results.</en>
+    </key>
+
+    <key name="inicio13">
+    <es>Personalización</es>
+    <en>Personalization</en>
+    </key>
+
+    <key name="inicio14">
+    <es>Adaptamos nuestros servicios a tus necesidades empresariales específicas, brindando soluciones únicas.</es>
+    <en>We adapt our services to your specific business needs, providing unique solutions.</en>
+    </key>
+
+    <key name="inicio15">
+    <es>Herramientas Avanzadas</es>
+    <en>Advanced Tools</en>
+    </key>
+
+    <key name="inicio16">
+    <es>Accede a herramientas y estrategias modernas diseñadas para maximizar el impacto de tus proyectos.</es>
+    <en>Access modern tools and strategies designed to maximize the impact of your projects.</en>
+    </key>
+
+    <key name="informacion">
+    <es>Más Información</es>
+    <en>More Information</en>
+    </key>
+
+    <key name="inicio17">
+    <es>Importancia de una Gestión Eficiente</es>
+    <en>Importance of Efficient Management</en>
+    </key>
+
+    <key name="inicio18">
+    <es>Descubre cómo una gestión eficiente puede marcar la diferencia en el éxito de tu empresa, optimizando recursos y alcanzando metas clave.</es>
+    <en>Discover how efficient management can make a difference in the success of your company, optimizing resources and achieving key goals.</en>
+    </key>
+
+    <key name="inicio19">
+    <es>Optimización de Recursos</es>
+    <en>Resource Optimization</en>
+    </key>
+
+    <key name="inicio20">
+    <es>Gestionar eficientemente asegura el uso adecuado de recursos financieros, humanos y tecnológicos, evitando desperdicios.</es>
+    <en>Managing efficiently ensures the appropriate use of financial, human and technological resources, avoiding waste.</en>
+    </key>
+
+    <key name="inicio21">
+    <es>Mejora en la Productividad</es>
+    <en>Improved Productivity</en>
+    </key>
+
+    <key name="inicio22">
+    <es>Una planificación clara y ejecución precisa incrementan la productividad y reducen tiempos innecesarios.</es>
+    <en>Clear planning and precise execution increase productivity and reduce unnecessary time.</en>
+    </key>
+
+    <key name="inicio23">
+    <es>Alcance de Objetivos</es>
+    <en>Scope of Objectives</en>
+    </key>
+
+    <key name="inicio24">
+    <es>Define metas claras y trabaja de manera estratégica para alcanzarlas, asegurando el éxito empresarial.</es>
+    <en>Define clear goals and work strategically to achieve them, ensuring business success.</en>
+    </key>
+
+    <key name="inicio25">
+    <es>¿Qué Puedes Personalizar?</es>
+    <en>What can you customize?</en>
+    </key>
+
+    <key name="inicio26">
+    <es>Adapta nuestros servicios a las necesidades específicas de tu empresa. Ofrecemos flexibilidad y soluciones personalizadas para asegurar tu éxito.</es>
+    <en>Adapt our services to the specific needs of your company. We offer flexibility and personalized solutions to ensure your success</en>
+    </key>
+
+    <key name="inicio27">
+    <es>Procesos Empresariales</es>
+    <en>Business Processes</en>
+    </key>
+
+    <key name="inicio28">
+    <es>Optimiza y adapta los procesos a las necesidades específicas de tu sector</es>
+    <en>Optimize and adapt processes to the specific needs of your sector</en>
+    </key>
+
+    <key name="inicio29">
+    <es>Gestión de Recursos</es>
+    <en>Resource Management</en>
+    </key>
+
+    <key name="inicio30">
+    <es>Personaliza la asignación de recursos para maximizar la eficiencia y minimizar costos.</es>
+    <en>Customize resource allocation to maximize efficiency and minimize costs.</en>
+    </key>
+
+    <key name="inicio31">
+    <es>Definición de Metas</es>
+    <en>Definition of Goals</en>
+    </key>
+
+    <key name="inicio32">
+    <es>Establece objetivos claros y ajustables según las prioridades de tu empresa.</es>
+    <en>Set clear and adjustable objectives according to your company's priorities.</en>
+    </key>
+
+    <key name="inicio33">
+    <es>Preguntas Frecuentes</es>
+    <en>Frequently Asked Questions</en>
+    </key>
+
+    <key name="inicio34">
+    <es>¿Qué incluye el servicio?</es>
+    <en>What does the service include?</en>
+    </key>
+
+    <key name="inicio35">
+    <es>Ofrecemos un análisis detallado, planificación personalizada y herramientas adaptadas a tus necesidades.</es>
+    <en>We offer detailed analysis, personalized planning and tools tailored to your needs.</en>
+    </key>
+
+    <key name="inicio36">
+    <es>¿Es adecuado para pequeñas empresas?</es>
+    <en>Is it suitable for small businesses?</en>
+    </key>
+
+    <key name="inicio37">
+    <es>Sí, nuestros servicios están diseñados para empresas de todos los tamaños.</es>
+    <en>Yes, our services are designed for businesses of all sizes.</en>
+    </key>
+<!--realizamos la traduccion para el menu de detalles-->
+    <key name="det-titulo">
+    <es>Detalles</es>
+    <en>Details</en>
+    </key>
+
+    <key name="detalles1">
+    <es>Fases</es>
+    <en>Phases</en>
+    </key>
+
+    <key name="detalles2">
+    <es>Cronograma</es>
+    <en>Schedule</en>
+    </key>
+
+    <key name="detalles3">
+    <es>Recursos</es>
+    <en>Resources</en>
+    </key>
+
+    <key name="detalles4">
+    <es>Plan</es>
+    <en>Plan</en>
+    </key>
+
+    <key name="detalles5">
+    <es>Fases Principales y Entregables</es>
+    <en>Main Phases and Deliverables</en>
+    </key>
+
+    <key name="detalles6">
+    <es>Descubre cómo hemos organizado las fases del proyecto para asegurar un progreso claro y estructurado.</es>
+    <en>Discover how we have organized the project phases to ensure clear and structured progress.</en>
+    </key>
+
+    <key name="detalles7">
+    <es>Inicio del Proyecto</es>
+    <en>Project Start</en>
+    </key>
+
+    <key name="detalles8">
+    <es>Análisis de requisitos y definición de objetivos para sentar las bases del proyecto.</es>
+    <en>Analysis of requirements and definition of objectives to lay the foundations of the project.</en>
+    </key>
+
+    <key name="detalles9">
+    <es>Desarrollo</es>
+    <en>Development</en>
+    </key>
+
+    <key name="detalles10">
+    <es> Implementación de funcionalidades clave con un enfoque en calidad y escalabilidad.</es>
+    <en>Implementation of key functionalities with a focus on quality and scalability.</en>
+    </key>
+
+    <key name="detalles11">
+    <es>Cierre del Proyecto</es>
+    <en>Project Closure</en>
+    </key>
+
+    <key name="detalles12">
+    <es>Validación, entrega final y documentación del proyecto para garantizar el éxito.</es>
+    <en>Validation, final delivery and project documentation to ensure success.</en>
+    </key>
+
+    <key name="detalles13">
+    <es>Cronograma Tentativo</es>
+    <en>Tentative Schedule</en>
+    </key>
+
+    <key name="fase1">
+    <es>Fase 1: Análisis</es>
+    <en>Phase 1: Analysis</en>
+    </key>
+
+    <key name="fase2">
+    <es>En esta fase se identifican los objetivos del proyecto, se recopilan requisitos clave y se define el alcance general.</es>
+    <en>In this phase, project objectives are identified, key requirements are collected, and the overall scope is defined.</en>
+    </key>
+
+    <key name="fase3">
+    <es>Duración estimada: 2-4 semanas</es>
+    <en>Estimated duration: 2-4 weeks</en>
+    </key>
+
+    <key name="fase4">
+    <es>Fase 2: Diseño</es>
+    <en>Phase 2: Design</en>
+    </key>
+
+    <key name="fase5">
+    <es>Se crean prototipos y estructuras técnicas, definiendo las principales funcionalidades y la interfaz del sistema.</es>
+    <en>Prototypes and technical structures are created, defining the main functionalities and interface of the system.</en>
+    </key>
+
+    <key name="fase6">
+    <es>Duración estimada: 3-5 semanas</es>
+    <en>Estimated duration: 3-5 weeks</en>
+    </key>
+
+    <key name="fase7">
+    <es>Fase 3: Desarrollo</es>
+    <en>Phase 3: Development</en>
+    </key>
+
+    <key name="fase8">
+    <es>En esta etapa se implementan las funcionalidades principales y se construye el sistema completo.</es>
+    <en>In this stage, the main functionalities are implemented and the complete system is built.</en>
+    </key>
+
+    <key name="detalles14">
+    <es>Explora cada fase del proyecto y descubre su descripción detallada.</es>
+    <en>Explore each phase of the project and discover its detailed description.</en>
+    </key>
+
+    <key name="detalles15">
+    <es>Duración estimada: 8-12 semanas</es>
+    <en>Estimated duration: 8-12 weeks</en>
+    </key>
+
+    <key name="detalles166">
+    <es>Fase 4: Validación</es>
+    <en>Phase 4: Validation</en>
+    </key>
+
+    <key name="detalles17">
+    <es>Se realizan pruebas exhaustivas, se corrigen errores y se asegura que el sistema cumple con las expectativas.</es>
+    <en>Extensive testing is performed, bugs are fixed, and the system is ensured that it meets expectations.</en>
+    </key>
+
+    <key name="detalles18">
+    <es>Duración estimada: 2-4 semanas</es>
+    <en>Estimated duration: 2-4 weeks</en>
+    </key>
+
+    <key name="detalles199">
+    <es>Fase 5: Implementación</es>
+    <en>Phase 5: Implementation</en>
+    </key>
+
+    <key name="detalles20">
+    <es>Se entrega el sistema al cliente, se capacita a los usuarios y se ofrece soporte inicial para garantizar su adopción exitosa.</es>
+    <en>The system is delivered to the client, users are trained, and initial support is offered to ensure successful adoption.</en>
+    </key>
+
+    <key name="detalles21">
+    <es>Duración estimada: 1-3 semanas</es>
+    <en>Estimated duration: 1-3 weeks</en>
+    </key>
+
+    <key name="detalles22">
+    <es>Recursos Necesarios</es>
+    <en>Necessary Resources</en>
+    </key>
+
+    <key name="detalles23">
+    <es>Contamos con un equipo especializado y las herramientas necesarias para garantizar el éxito del proyecto.</es>
+    <en>We have a specialized team and the necessary tools to guarantee the success of the project.</en>
+    </key>
+
+    <key name="detalles24">
+    <es>Nuestro Equipo Especializado</es>
+    <en>Our Specialized Team</en>
+    </key>
+
+    <key name="detalles25">
+    <es>Nuestro equipo está compuesto por profesionales altamente capacitados que se encargan de cada aspecto del proyecto.
+        Con una amplia experiencia en desarrollo, diseño y gestión, trabajamos juntos para garantizar resultados excepcionales.</es>
+    <en>Our team is made up of highly trained professionals who are responsible for every aspect of the project.
+        With extensive experience in development, design and management, we work together to ensure exceptional results.</en>
+    </key>
+
+    <key name="detalles26">
+    <es>5 Desarrolladores</es>
+    <en>5 Developers</en>
+    </key>
+
+    <key name="detalles27">
+    <es>2 Diseñadores</es>
+    <en>2 Designers</en>
+    </key>
+
+    <key name="detalles28">
+    <es>Recursos Necesarios para el Proyecto</es>
+    <en>Resources Needed for the Project</en>
+    </key>
+
+    <key name="detalles29">
+    <es>Para garantizar el éxito del proyecto, hemos identificado los recursos clave necesarios para llevar a cabo cada fase con eficiencia y precisión.</es>
+    <en>To ensure the success of the project, we have identified the key resources necessary to carry out each phase with efficiency and precision.</en>
+    </key>
+
+    <key name="detalles30">
+    <es>Herramientas:</es>
+    <en>Tools:</en>
+    </key>
+
+    <key name="detalles31">
+    <es>Software de gestión de proyectos como Jira y Trello para organizar tareas y mantener el flujo de trabajo.</es>
+    <en>Project management software like Jira and Trello to organize tasks and maintain workflow.</en>
+    </key>
+
+    <key name="detalles32">
+    <es>Personal:</es>
+    <en>Staff:</en>
+    </key>
+
+    <key name="detalles33">
+    <es>Contamos con un equipo diverso: 5 desarrolladores, 2 diseñadores, y un equipo de gestión altamente cualificado.</es>
+    <en>We have a diverse team: 5 developers, 2 designers, and a highly qualified management team.</en>
+    </key>
+    
+    <key name="detalles333">
+    <es>Presupuesto:</es>
+    <en>Budget:</en>
+    </key>
+
+    <key name="detalles34">
+    <es>Un presupuesto inicial de $50,000 USD destinado a recursos, herramientas, y personal altamente capacitado.</es>
+    <en>An initial budget of $50,000 USD allocated to resources, tools, and highly trained personnel</en>
+    </key>
+
+    <key name="detalles35">
+    <es>Plan de Comunicación y Reportes</es>
+    <en>Communication and Reporting Plan</en>
+    </key>
+
+    <key name="detalles36">
+    <es>Nuestro plan de comunicación asegura que todas las partes interesadas estén bien informadas a lo largo del proyecto.</es>
+    <en>Our communication plan ensures that all interested parties are well informed throughout the project.</en>
+    </key>
+
+    <key name="detalles37">
+    <es>Canales de Comunicación</es>
+    <en>Communication Channels</en>
+    </key>
+
+    <key name="detalles38">
+    <es>Utilizamos una variedad de canales para garantizar que todos los miembros del equipo y las partes interesadas estén al tanto del progreso del proyecto.</es>
+    <en>We use a variety of channels to ensure all team members and stakeholders are aware of project progress.</en>
+    </key>
+
+    <key name="detalles39">
+    <es>Reuniones Semanales:</es>
+    <en>Weekly Meetings:</en>
+    </key>
+
+    <key name="detalles40">
+    <es>Reuniones virtuales o presenciales para revisar el progreso, resolver dudas y ajustar el plan de acción según sea necesario.</es>
+    <en>Virtual or in-person meetings to review progress, resolve questions, and adjust the action plan as necessary.</en>
+    </key>
+
+    <key name="detalles41">
+    <es>Correos Electrónicos:</es>
+    <en>Emails:</en>
+    </key>
+
+    <key name="detalles42">
+    <es>Envío de resúmenes detallados y actualizaciones sobre el estado del proyecto a los interesados clave.</es>
+    <en>Sending detailed summaries and updates on project status to key stakeholders.</en>
+    </key>
+
+    <key name="detalles43">
+    <es>Plataforma de Gestión:</es>
+    <en>Management Platform:</en>
+    </key>
+
+    <key name="detalles44">
+    <es>Herramientas como Jira o Trello para seguimiento en tiempo real, gestión de tareas y asignación de responsabilidades.</es>
+    <en>Tools like Jira or Trello for real-time tracking, task management and assignment of responsibilities.</en>
+    </key>
+
+    <key name="detalles45">
+    <es>Frecuencia y Responsables</es>
+    <en>Frequency and Responsible Persons</en>
+    </key>
+
+    <key name="detalles46">
+    <es>La frecuencia de los reportes y las reuniones está diseñada para garantizar la alineación continua entre el equipo y los interesados.</es>
+    <en>The frequency of reports and meetings is designed to ensure continuous alignment between the team and stakeholders.</en>
+    </key>
+
+    <key name="detalles47">
+    <es>Reportes Mensuales:</es>
+    <en>Monthly Reports:</en>
+    </key>
+
+    <key name="detalles48">
+    <es>El equipo de gestión enviará reportes mensuales con un resumen detallado del progreso, hitos alcanzados y próximos pasos.</es>
+    <en>The management team will send monthly reports with a detailed summary of progress, milestones achieved and next steps.</en>
+    </key>
+
+    <key name="detalles49">
+    <es>Reuniones Semanales:</es>
+    <en>Weekly Meetings:</en>
+    </key>
+
+    <key name="detalles50">
+    <es>Cada semana se celebrará una reunión de revisión con el equipo, donde se discutirán los avances y se tomarán decisiones sobre posibles ajustes.</es>
+    <en>A review meeting will be held each week with the team, where progress will be discussed and decisions made on possible adjustments.</en>
+    </key>
+
+    <key name="detalles51">
+    <es>Responsable:</es>
+    <en>Responsible:</en>
+    </key>
+
+    <key name="detalles52">
+    <es>El Coordinador del Proyecto será el encargado de gestionar las comunicaciones, asegurando que la información fluya de manera eficiente entre los miembros del equipo y las partes interesadas.</es>
+    <en>The Project Coordinator will be responsible for managing communications, ensuring that information flows efficiently between team members and interested parties.</en>
+    </key>
+
+    <key name="bienvenido1">
+    <es>Bienvenido a detalles del proyecto </es>
+    <en>Welcome to project details</en>
+    </key>
+
+
+
+
+
+
+
+
+
+
+    <!-- ***** INICIO TRADUCCION DE RECOMENDACIONES*********   -->
+    <key name="recotitulo">
+    <es>Recomendaciones</es>
+    <en>Recommendations</en>
+    </key>
+    <key name="recomenu1">
+    <es>Artículos</es>
+    <en>Articles</en>
+    </key>
+    <key name="recomenu2">
+    <es>Consejos</es>
+    <en>Tips</en>
+    </key>
+    <key name="recomenu3">
+    <es>Videos</es>
+    <en>Videos</en>
+    </key>
+    <key name="recomenu4">
+    <es>Proveedores</es>
+    <en>Suppliers</en>
+    </key>
+    <key name="recobienvenida">
+    <es>Recomendaciones</es>
+    <en>Recommendations</en>
+    </key>
+    <key name="recoarticulos1">
+    <es>Artículos sobre Gestión Eficiente de Proyectos</es>
+    <en>Articles on Efficient Project Management</en>
+    </key>
+    <key name="recoarticulos2">
+    <es>Descubre estrategias y prácticas recomendadas para mejorar la gestión de tus proyectos empresariales personalizados.</es>
+    <en>Discover strategies and best practices to improve the management of your custom business projects.</en>
+    </key>
+    <key name="recoarticulos3">
+    <es>1. Planificación Estratégica</es>
+    <en>Strategic Planning</en>
+    </key>
+    <key name="recoarticulos4">
+    <es>Aprende cómo estructurar un plan estratégico efectivo que maximice la eficiencia y minimice los riesgos en tus proyectos.</es>
+    <en>Learn how to structure an effective strategic plan that maximizes efficiency and minimizes risks in your projects.</en>
+    </key>
+    <key name="recoarticulos5">
+    <es>2. Gestión del Tiempo</es>
+    <en>Time Management</en>
+    </key>
+    <key name="recoarticulos6">
+    <es>Técnicas y herramientas para optimizar el tiempo de ejecución de tus proyectos sin comprometer la calidad.</es>
+    <en>Techniques and tools to optimize the execution time of your projects without compromising quality.</en>
+    </key>
+    <key name="recoarticulos7">
+    <es>3. Comunicación Efectiva</es>
+    <en>Effective Communication</en>
+    </key>
+    <key name="recoarticulos8">
+    <es>Cómo establecer una comunicación clara y efectiva entre los miembros del equipo para garantizar el éxito del proyecto.</es>
+    <en>How to establish clear and effective communication among team members to ensure project success.</en>
+    </key>
+    <key name="recoarticulos9">
+    <es>4. Evaluación de Riesgos</es>
+    <en>Risk Assessment</en>
+    </key>
+    <key name="recoarticulos10">
+    <es>Identifica, analiza y mitiga riesgos potenciales que puedan afectar los resultados del proyecto.</es>
+    <en>Identify, analyze, and mitigate potential risks that may affect project outcomes.</en>
+    </key>
+    <key name="recoarticulos11">
+    <es>5. Uso de Tecnología en Proyectos</es>
+    <en>Use of Technology in Projects</en>
+    </key>
+    <key name="recoarticulos12">
+    <es>Explora las herramientas tecnológicas más innovadoras para la gestión de proyectos empresariales personalizados.</es>
+    <en>Explore the most innovative technological tools for managing customized business projects.</en>
+    </key>
+    <key name="recoarticulos13">
+    <es>6. Seguimiento y Control</es>
+    <en>Monitoring and Control</en>
+    </key>
+    <key name="recoarticulos14">
+    <es>Descubre cómo monitorear el progreso de tus proyectos para asegurarte de que cumplan con los objetivos establecidos.</es>
+    <en>Discover how to monitor the progress of your projects to ensure they meet established goals.</en>
+    </key>
+    <key name="recoconsejos1">
+    <es>Consejos para Optimizar Recursos</es>
+        <en>Tips for Optimizing Resources</en>
+    </key>
+    <key name="recoconsejos2">
+    <es>Mejora la eficiencia de tus proyectos empresariales personalizados con estos consejos prácticos.</es>
+        <en>Improve the efficiency of your customized business projects with these practical tips.</en>
+    </key>
+    <key name="recoconsejos3">
+    <es>Prioriza las tareas esenciales</es>
+        <en>Prioritize essential tasks</en>
+    </key>
+    <key name="recoconsejos4">
+    <es>Identifica y enfoca los recursos en las tareas que generen mayor valor para el proyecto. Usa herramientas de priorización como la matriz de Eisenhower.</es>
+        <en>Identify and focus resources on tasks that generate the most value for the project. Use prioritization tools like the Eisenhower matrix.</en>
+    </key>
+    <key name="recoconsejos5">
+    <es>Automatiza procesos repetitivos</es>
+        <en>Automate repetitive processes</en>
+    </key>
+    <key name="recoconsejos6">
+    <es>Implementa herramientas tecnológicas que permitan automatizar procesos como la asignación de tareas, reportes de progreso y seguimiento de gastos.</es>
+        <en>Implement technological tools that allow you to automate processes such as task assignment, progress reports, and expense tracking.</en>
+    </key>
+    <key name="recoconsejos7">
+    <es>Evalúa y optimiza el presupuesto</es>
+        <en>Evaluate and optimize the budget</en>
+    </key>
+    <key name="recoconsejos8">
+    <es>Revisa periódicamente el presupuesto del proyecto y ajusta áreas donde los recursos puedan estar infrautilizados o mal asignados.</es>
+        <en>Periodically review the project budget and adjust areas where resources may be underutilized or misallocated.</en>
+    </key>
+    <key name="recoconsejos9">
+    <es>Fomenta la comunicación eficaz</es>
+        <en>Encourage effective communication</en>
+    </key>
+    <key name="recoconsejos10">
+    <es>Una buena comunicación entre los miembros del equipo ayuda a evitar malentendidos y duplicación de esfuerzos, maximizando el uso de recursos.</es>
+        <en>Good communication among team members helps avoid misunderstandings and duplication of efforts, maximizing resource use.</en>
+    </key>
+    <key name="recoconsejos11">
+    <es>Capacita a tu equipo</es>
+        <en>Train your team</en>
+    </key>
+    <key name="recoconsejos12">
+    <es>Invierte en la formación de los integrantes del equipo para que puedan trabajar de manera más eficiente y adaptable a las necesidades del proyecto.</es>
+        <en>Invest in training team members so they can work more efficiently and adapt to project needs.</en>
+    </key>
+    <key name="recovideos1">
+    <es>Videos sobre Casos de Éxito</es>
+    <en>Videos about Success Stories</en>
+    </key>
+    <key name="recovideos2">
+    <es>Inspírate con historias reales de éxito en la gestión de proyectos empresariales en diferentes sectores.</es>
+    <en>Get inspired by real success stories in business project management across different sectors.</en>
+    </key>
+    <key name="recovideos3">
+    <es>1. Tecnología e Innovación</es>
+        <en>Technology and Innovation</en>
+    </key>
+    <key name="recovideos4">
+    <es>Conoce cómo una startup tecnológica optimizó sus procesos para lograr un crecimiento exponencial.</es>
+        <en>Learn how a tech startup optimized its processes to achieve exponential growth.</en>
+    </key>
+    <key name="recovideos5">
+    <es>2. Proyectos en Construcción</es>
+        <en>Construction Projects</en>
+    </key>
+    <key name="recovideos6">
+    <es>Descubre cómo una empresa constructora completó con éxito un megaproyecto en tiempo récord.</es>
+        <en>Discover how a construction company successfully completed a megaproject in record time.</en>
+    </key>
+    <key name="recovideos7">
+    <es>3. Gestión en Retail</es>
+        <en>Retail Management</en>
+    </key>
+    <key name="recovideos8">
+    <es>Aprende cómo una cadena de tiendas mejoró la experiencia del cliente con estrategias personalizadas.</es>
+        <en>Learn how a chain of stores improved customer experience with personalized strategies.</en>
+    </key>
+    <key name="recovideos9">
+    <es>4. Industria Alimentaria</es>
+        <en>Food Industry</en>
+    </key>
+    <key name="recovideos10">
+    <es>Caso de éxito: Cómo una empresa alimentaria optimizó su cadena de suministro y producción.</es>
+        <en>Success story: How a food company optimized its supply chain and production.</en>
+    </key>
+    <key name="recovideos11">
+    <es>5. Energía Renovable</es>
+        <en>Renewable Energy</en>
+    </key>
+    <key name="recovideos12">
+     <es>Cómo un proyecto de energía solar escaló su impacto global con una gestión eficiente.</es>
+        <en>How a solar energy project scaled its global impact with efficient management.</en>
+    </key>
+    <key name="recovideos13">
+    <es>6. Educación Digital</es>
+        <en>Digital Education</en>
+    </key>
+    <key name="recovideos14">
+    <es>Historias de éxito en proyectos educativos que aprovecharon la tecnología para enseñar a distancia.</es>
+        <en>Success stories in educational projects that leveraged technology for distance learning.</en>
+    </key>
+    <key name="recoproveedores1">
+    <es>Proveedores Recomendados de Software de Gestión</es>
+        <en>Recommended Management Software Providers</en>
+    </key>
+    <key name="recoproveedores2">
+    <es>Descubre las mejores opciones en software de gestión empresarial para optimizar tus proyectos.</es>
+        <en>Discover the best options in business management software to optimize your projects.</en>
+    </key>
+    <key name="recoproveedores3">
+     <es>1. Asana</es>
+        <en>1. Asana</en>
+    </key>
+    <key name="recoproveedores4">
+    <es>Herramienta versátil para la gestión de tareas y proyectos, ideal para equipos colaborativos.</es>
+        <en>Versatile tool for task and project management, ideal for collaborative teams.</en>
+    </key>
+    <key name="recoproveedores5">
+    <es>2. Trello</es>
+        <en>2. Trello</en>
+    </key>
+    <key name="recoproveedores6">
+    <es>Software intuitivo basado en tableros Kanban para organizar proyectos de manera visual.</es>
+        <en>Intuitive software based on Kanban boards to organize projects visually.</en>
+    </key>
+    <key name="recoproveedores7">
+    <es>3. Monday.com</es>
+        <en>3. Monday.com</en>
+    </key>
+    <key name="recoproveedores8">
+     <es>Plataforma de gestión de trabajo que permite personalizar flujos de trabajo y seguimiento de proyectos.</es>
+        <en>Work management platform that allows customizing workflows and project tracking.</en>
+    </key>
+    <key name="recoproveedores9">
+    <es>4. Zoho Projects</es>
+    <en>4. Zoho Projects</en>
+    </key>
+    <key name="recoproveedores10">
+    <es>Una solución integral que combina gestión de tareas, cronogramas y reportes avanzados.</es>
+    <en>A comprehensive solution that combines task management, schedules and advanced reporting.</en>
+    </key>
+    <key name="recoproveedores11">
+    <es>5. Jira</es>
+    <en>5. Jira</en>
+    </key>
+    <key name="recoproveedores12">
+    <es>Software diseñado para la planificación ágil y la gestión de proyectos de desarrollo.</es>
+    <en>Software designed for agile planning and management of development projects.</en>
+    </key>
+    <key name="recoproveedores13">
+    <es>4. ClickUp</es>
+        <en>4. ClickUp</en>
+    </key>
+    <key name="recoproveedores14">
+    <es>Una herramienta todo-en-uno para la gestión de proyectos, tareas y objetivos empresariales.</es>
+    <en>An all-in-one tool for managing projects, tasks and business goals.</en>
+    </key>
+    <key name="recoproveedores15">
+    <es>Visitar sitio web</es>
+        <en>Visit website</en>
+    </key>
+    <key name="recofooter">
+    <es>2025. Derechos reservados. Pedro Janco Achacollo</es>
+        <en>2025. All rights reserved. Pedro Janco Achacollo</en>
+    </key>
+    <!-- ***** FIN DE RECOMENDACIONES*********   -->
+
+    <!-- ***** INICIO TRADUCCION DE COMUNIDAD*********   -->
+    <key name="comutitulo">
+    <es>Comunidad</es>
+    <en>Comunidad</en>
+    </key>
+    <key name="comumenu1">
+    <es>Foros</es>
+    <en>Forums</en>
+    </key>
+    <key name="comumenu2">
+    <es>Encuentros</es>
+    <en>Encounters</en>
+    </key>
+    <key name="comumenu3">
+    <es>Consejos</es>
+    <en>Tips</en>
+    </key>
+    <key name="comumenu4">
+    <es>Discusiones</es>
+    <en>Discussions</en>
+    </key>
+    <key name="comubienvenida">
+    <es>Bienvenido a nuestra comunidad</es>
+    <en>Welcome to our community</en>
+    </key>
+    <key name="comuforos1">
+    <es>Foros de Intercambio de Mejores Prácticas</es>
+    <en>Best Practices Exchange Forums</en>
+    </key>
+    <key name="comuforos2">
+    <es>Únete a la conversación y comparte tus ideas sobre el Gestor de Proyectos Empresariales Personalizados</es>
+    <en>Join the conversation and share your thoughts on Custom Enterprise Project Manager</en>
+    </key>
+    <key name="comuforos3">
+    <es>Selecciona un Tema</es>
+    <en>Select a Theme</en>
+    </key>
+    <key name="comuencuentros1">
+    <es>Encuentros para discutir tendencias en gestión de proyectos</es>
+    <en>Meetings to discuss trends in project management</en>
+    </key>
+    <key name="comuencuentros2">
+    <es>Explora nuevas ideas y comparte tus perspectivas sobre el Gestor de Proyectos Empresariales Personalizados</es>
+    <en>Explore new ideas and share your perspectives on Custom Enterprise Project Manager</en>
+    </key>
+    <key name="comuencuentros3">
+    <es>Elige un tema:</es>
+    <en>Choose a topic:</en>
+    </key>
+    <key name="comuencuentros4">
+    <es>Selecciona una serie</es>
+    <en>Select a series</en>
+    </key>
+    <key name="comuencuentros5">
+    <es>Cargar Comentarios</es>
+    <en>Load Comments</en>
+    </key>
+    <key name="comuencuentros6">
+    <es>Escribe tu opinión:</es>
+    <en>Write your opinion:</en>
+    </key>
+    <key name="comuencuentros7">
+    <es>Enviar Opinión</es>
+    <en>Send Opinion</en>
+    </key>
+    <key name="comuencuentros8">
+    <es>Tendencias en metodologías ágiles</es>
+    <en>Trends in Agile Methodologies</en>
+    </key>
+    <key name="comuencuentros9">
+    <es>Tecnologías innovadoras en gestión</es>
+    <en>Innovative technologies in management</en>
+    </key>
+    <key name="comuencuentros10">    
+    <es>Automatización de procesos</es>
+    <en>Process automation</en>
+    </key>
+    <key name="comuencuentros11">
+    <es>Análisis de impacto empresarial</es>
+    <en>Business impact analysis</en>
+    </key>
+    <key name="comuencuentros12">
+    <es>Casos de éxito en proyectos empresariales</es>
+    <en>Success stories in business projects</en>
+    </key>
+    <key name="comuconsejos1">
+    <es>Consejos de Expertos en la Industria</es>
+        <en>Expert Tips in the Industry</en>
+    </key>
+    <key name="comuconsejos2">
+    <es>Descubre estrategias y recomendaciones de profesionales destacados para optimizar la gestión de proyectos empresariales.</es>
+        <en>Discover strategies and recommendations from leading professionals to optimize business project management.</en>
+    </key>
+    <key name="comuconsejos3">
+    <es>1. Define Objetivos Claros</es>
+        <en>1. Define Clear Objectives</en>
+    </key>
+    <key name="comuconsejos4">
+    <es>Antes de iniciar un proyecto, asegúrate de establecer metas específicas y medibles. Esto ayudará a mantener a tu equipo enfocado.</es>
+        <en>Before starting a project, ensure you set specific and measurable goals. This will help keep your team focused.</en>
+    </key>
+    <key name="comuconsejos5">
+    <es>- Ana López, Gerente de Proyectos</es>
+        <en>- Ana López, Project Manager</en>
+    </key>
+    <key name="comuconsejos6">
+    <es>2. Prioriza la Comunicación</es>
+        <en>2. Prioritize Communication</en>
+    </key>
+    <key name="comuconsejos7">
+    <es>Mantén una comunicación abierta y efectiva entre los miembros del equipo y las partes interesadas para evitar malentendidos.</es>
+        <en>Maintain open and effective communication among team members and stakeholders to avoid misunderstandings.</en>
+    </key>
+    <key name="comuconsejos8">
+    <es>- Carlos Rivera, Consultor Empresarial</es>
+        <en>- Carlos Rivera, Business Consultant</en>
+    </key>
+    <key name="comuconsejos9">
+    <es>3. Adopta Metodologías Ágiles</es>
+        <en>3. Adopt Agile Methodologies</en>
+    </key>
+    <key name="comuconsejos10">
+    <es>Las metodologías ágiles como Scrum y Kanban permiten adaptarte rápidamente a los cambios y maximizar la eficiencia del equipo.</es>
+        <en>Agile methodologies like Scrum and Kanban allow you to quickly adapt to changes and maximize team efficiency.</en>
+    </key>
+    <key name="comuconsejos11">
+    <es>- Laura Gómez, Especialista en Metodologías Ágiles</es>
+        <en>- Laura Gómez, Agile Methodologies Specialist</en>
+    </key>
+    <key name="comuconsejos12">
+    <es>4. Automatiza Tareas Repetitivas</es>
+        <en>4. Automate Repetitive Tasks</en>
+    </key>
+    <key name="comuconsejos13">
+   <es>Utiliza herramientas tecnológicas para automatizar procesos rutinarios y enfócate en las tareas estratégicas.</es>
+        <en>Use technological tools to automate routine processes and focus on strategic tasks.</en>
+    </key>
+    <key name="comuconsejos14">
+    <es>- Jorge Martínez, Desarrollador de Software</es>
+        <en>- Jorge Martínez, Software Developer</en>
+    </key>
+    <key name="comuconsejos15">
+    <es>5. Evalúa los Riesgos</es>
+        <en>5. Assess Risks</en>
+    </key>
+    <key name="comuconsejos16">
+     <es>Identifica posibles riesgos desde el inicio del proyecto y desarrolla un plan de contingencia para cada uno.</es>
+        <en>Identify potential risks from the start of the project and develop a contingency plan for each.</en>
+    </key>
+    <key name="comuconsejos17">
+    <es>- María Fernández, Analista de Riesgos</es>
+        <en>- María Fernández, Risk Analyst</en>
+    </key>
+    <key name="comuconsejos18">
+    <es>6. Invierte en Capacitación</es>
+        <en>6. Invest in Training</en>
+    </key>
+    <key name="comuconsejos19">
+    <es>Un equipo bien capacitado está mejor preparado para enfrentar los desafíos del proyecto y garantizar el éxito.</es>
+        <en>A well-trained team is better prepared to face project challenges and ensure success.</en>
+    </key>
+    <key name="comuconsejos20">
+     <es>- Sebastián Rojas, Coach Empresarial</es>
+        <en>- Sebastián Rojas, Business Coach</en>
+    </key>
+    <key name="comudiscusiones1">
+    <es>Discusión sobre herramientas de productividad</es>
+    <en>Discussion on productivity tools</en>
+    </key>
+    <key name="comudiscusiones2">
+    <es>Comparte tus ideas y recomendaciones sobre herramientas para el Gestor de Proyectos Empresariales Personalizados</es>
+    <en>Share your ideas and recommendations on tools for the Custom Enterprise Project Manager</en>
+    </key>
+    <key name="comudiscusiones3">
+    <es>Elige un tema:</es>
+    <en>Choose a topic:</en>
+    </key>
+    <key name="comudiscusiones4">
+    <es>Selecciona un tema</es>
+    <en>Select a topic</en>
+    </key>
+    <key name="comudiscusiones5">
+    <es>Gestores de tareas y proyectos</es>
+    <en>Task and project managers</en>
+    </key>
+    <key name="comudiscusiones6">
+    <es>Herramientas para colaboración en equipos</es>
+    <en>Tools for team collaboration</en>
+    </key>
+    <key name="comudiscusiones7">
+    <es>Automatización de flujos de trabajo</es>
+    <en>Workflow Automation</en>
+    </key>
+    <key name="comudiscusiones8">
+    <es>Integración entre aplicaciones</es>
+    <en>Integration between applications</en>
+    </key>
+    <key name="comudiscusiones9">
+    <es>Apps de anotaciones productivas</es>
+    <en>Productive Notetaking Apps</en>
+    </key>
+    <key name="comudiscusiones10">
+    <es>Cargar Comentarios</es>
+    <en>Load Comments</en>
+    </key>
+    <key name="comudiscusiones11">
+    <es>Comparte tu opinión:</es>
+    <en>Share your opinion:</en>
+    </key>
+    <key name="comudiscusiones12">
+    <es>Enviar Opinión</es>
+    <en>Send Opinion</en>
+    </key>
+    <!-- ***** FIN DE COMUNIDAD*********   -->
+
+    <!-- ***** INICIO TRADUCCION DE EXTRAS*********   -->
+    <key name="extitulo">
+    <es>Extras</es>
+    <en>Extra</en>
+    </key>
+    <key name="exmenu1">
+    <es>Plantillas</es>
+    <en>Templates</en>
+    </key>
+    <key name="exmenu2">
+    <es>Videos</es>
+    <en>Videos</en>
+    </key>
+    <key name="exmenu3">
+    <es>Casos de estudio</es>
+    <en>Case studies</en>
+    </key>
+    <key name="exmenu4">
+    <es>Ideas</es>
+    <en>Ideas</en>
+    </key>
+    <key name="exbienvenida">
+    <es>Bienvenido al Menu de Extras</es>
+    <en>Welcome to the Extras Menu</en>
+    </key>
+    <key name="explantillas1">
+    <es>🌟 Plantillas para Cronogramas y Presupuestos</es>
+        <en>🌟 Templates for Schedules and Budgets</en>
+    </key>
+    <key name="explantillas2">
+     <es>Aquí encontrarás una variedad de plantillas diseñadas para facilitar la planificación y gestión de tus proyectos empresariales personalizados.</es>
+        <en>Here you will find a variety of templates designed to facilitate the planning and management of your customized business projects.</en>
+    </key>
+    <key name="explantillas3">
+    <es>📅 Plantillas de Cronograma</es>
+        <en>📅 Schedule Templates</en>
+    </key>
+    <key name="explantillas4">
+    <es>Visualiza el progreso de tu proyecto con nuestras plantillas de cronograma:</es>
+        <en>Visualize the progress of your project with our schedule templates:</en>
+    </key>
+    <key name="explantillas5">
+    <es>Diagrama de Gantt:  Ideal para proyectos complejos.</es>
+    <en>Gantt Chart:  Ideal for complex projects.</en>
+    </key>
+    <key name="explantillas6">
+    <es>Calendario Mensual:  Perfecto para planificación a corto plazo</es>
+    <en>Monthly Calendar:  Perfect for short-term planning</en>
+    </key>
+    <key name="explantillas7">
+    <es>Lista de Tareas:  Seguimiento rápido de actividades pendientes</es>
+    <en>Task List:  Quickly track pending activities</en>
+    </key>
+    <key name="explantillas8">
+    <es>💰 Plantillas de Presupuesto</es>
+        <en>💰 Budget Templates</en>
+    </key>
+    <key name="explantillas9">
+    <es>Controla los costos de tu proyecto con nuestras plantillas de presupuesto:</es>
+        <en>Control your project costs with our budget templates:</en>
+    </key>
+    <key name="explantillas10">
+    <es>Presupuesto General:   Categorías como materiales y mano de obra</es>
+    <en>General Budget:  Categories such as materials and labor</en>
+    </key>
+    <key name="explantillas11">
+    <es>Seguimiento de Gastos:   Registra gastos reales vs. estimados.</es>
+    <en>Expense Tracking:  Record actual vs. estimated expenses.</en>
+    </key>
+    <key name="explantillas12">
+    <es>Informe Financiero Mensual:   Resumen del estado financiero del proyecto</es>
+    <en>Monthly Financial Report:   Summary of the financial status of the project</en>
+    </key>
+    <key name="explantillas13">
+    <es>Descargar Cronograma</es>
+        <en>Download Schedule</en>
+    </key>
+    <key name="explantillas14">
+    <es>Descargar Presupuesto</es>
+        <en>Download Budget</en>
+    </key>
+    <key name="explantillas15">
+    <es>Descarga las plantillas que mejor se adapten a tus necesidades y comienza a gestionar tus proyectos con mayor eficacia. ¡La organización es clave para el éxito!</es>
+        <en>Download the templates that best suit your needs and start managing your projects more effectively. Organization is key to success!</en>
+    </key>
+    <key name="exvideos1">
+    <es>Videos sobre Metodologías de Gestión (Ágil, Waterfall)</es>
+        <en>Videos on Management Methodologies (Agile, Waterfall)</en>
+    </key>
+    <key name="exvideos2">
+    <es>Aprende sobre las metodologías de gestión más utilizadas en proyectos empresariales: Ágil y Waterfall.</es>
+        <en>Learn about the most commonly used management methodologies in business projects: Agile and Waterfall.</en>
+    </key>
+    <key name="exvideos3">
+    <es>1. Introducción a la Metodología Ágil</es>
+        <en>1. Introduction to Agile Methodology</en>
+    </key>
+    <key name="exvideos4">
+    <es>Descubre cómo la metodología Ágil permite gestionar proyectos con flexibilidad y eficiencia.</es>
+        <en>Discover how the Agile methodology allows for flexible and efficient project management.</en>
+    </key>
+    <key name="exvideos5">
+     <es>2. Waterfall: Gestión de Proyectos en Cascada</es>
+        <en>2. Waterfall: Project Management in Cascades</en>
+    </key>
+    <key name="exvideos6">
+    <es>Aprende cómo la metodología Waterfall estructura los proyectos en fases secuenciales y bien definidas.</es>
+        <en>Learn how the Waterfall methodology structures projects into well-defined sequential phases.</en>
+    </key>
+    <key name="exvideos7">
+    <es>3. Comparativa entre Ágil y Waterfall</es>
+        <en>3. Comparison between Agile and Waterfall</en>
+    </key>
+    <key name="exvideos8">
+    <es>Conoce las diferencias clave entre la metodología Ágil y Waterfall para elegir la más adecuada para tu proyecto.</es>
+        <en>Understand the key differences between Agile and Waterfall methodologies to choose the most suitable one for your project.</en>
+    </key>
+    <key name="exvideos9">
+     <es>4. Implementación de Scrum en Proyectos Ágiles</es>
+        <en>4. Implementing Scrum in Agile Projects</en>
+    </key>
+    <key name="exvideos10">
+    <es>Aprende cómo aplicar la metodología Scrum en proyectos ágiles para maximizar la productividad.</es>
+        <en>Learn how to apply the Scrum methodology in agile projects to maximize productivity.</en>
+    </key>
+    <key name="exvideos11">
+    <es>5. Gestión de Proyectos con Kanban</es>
+        <en>5. Project Management with Kanban</en>
+    </key>
+    <key name="exvideos12">
+     <es>Entiende cómo la metodología Kanban ayuda a visualizar el trabajo y mejorar el flujo de trabajo en proyectos ágiles.</es>
+        <en>Understand how the Kanban methodology helps visualize work and improve workflow in agile projects.</en>
+    </key>
+    <key name="exvideos13">
+    <es>6. Mejorando la Colaboración en Equipos Ágiles</es>
+        <en>6. Improving Collaboration in Agile Teams</en>
+    </key>
+    <key name="exvideos14">
+    <es>Cómo fomentar la colaboración efectiva en equipos ágiles para mejorar la gestión de proyectos.</es>
+        <en>How to foster effective collaboration in agile teams to improve project management.</en>
+    </key>
+    <key name="excasos1">
+    <es>✨ Casos de Estudio Inspiradores</es>
+        <en>✨ Inspiring Case Studies</en>
+    </key>
+    <key name="excasos2">
+    <es>Descubre cómo empresas innovadoras han transformado sus proyectos a través de la gestión personalizada.</es>
+        <en>Discover how innovative companies have transformed their projects through personalized management.</en>
+    </key>
+    <key name="excasos3">
+    <es>1. Innovación en la Industria Alimentaria</es>
+        <en>1. Innovation in the Food Industry</en>
+    </key>
+    <key name="excasos4">
+    <es>Una empresa de alimentos implementó un gestor de proyectos personalizado que optimizó su cadena de suministro, reduciendo el tiempo de entrega en un 30% y mejorando la satisfacción del cliente.</es>
+        <en>A food company implemented a customized project manager that optimized its supply chain, reducing delivery time by 30% and improving customer satisfaction.</en>
+    </key>
+    <key name="excasos5">
+    <es>leer más</es>
+    <en>Lore More</en>
+    </key>
+    <key name="excasos6">
+     <es>2. Transformación Digital en el Sector Salud</es>
+        <en>2. Digital Transformation in the Health Sector</en>
+    </key>
+    <key name="excasos7">
+    <es>Un hospital adoptó un sistema de gestión de proyectos a medida que mejoró la eficiencia operativa en un 40%, ofreciendo una atención al paciente más integrada y personalizada.</es>
+        <en>A hospital adopted a tailored project management system that improved operational efficiency by 40%, providing more integrated and personalized patient care.</en>
+    </key>
+    <key name="excasos8">
+     <es>3. Sostenibilidad en la Construcción</es>
+        <en>3. Sustainability in Construction</en>
+    </key>
+    <key name="excasos9">
+   <es>Una empresa constructora utilizó un gestor de proyectos adaptado a sus necesidades, implementando prácticas sostenibles que redujeron su huella de carbono y atrajeron nuevos clientes.</es>
+        <en>A construction company used a project manager tailored to its needs, implementing sustainable practices that reduced its carbon footprint and attracted new clients.</en>
+    </key>
+    <key name="excasos10">
+    <es>4. Eficiencia Energética en el Sector Industrial</es>
+        <en>4. Energy Efficiency in the Industrial Sector</en>
+    </key>
+    <key name="excasos11">
+     <es>Una fábrica implementó un sistema personalizado que identificó áreas de mejora en su consumo energético, logrando una reducción del 25% en costos operativos.</es>
+        <en>A factory implemented a customized system that identified areas for improvement in its energy consumption, achieving a 25% reduction in operating costs.</en>
+    </key>
+    <key name="excasos12">
+    <es>Ver Todos los Casos</es>
+        <en>View All Cases</en>
+    </key>
+    <key name="exideas1">
+    <es>💡 Ideas para Integrar Innovación en los Proyectos</es>
+        <en>💡 Ideas for Integrating Innovation in Projects</en>
+    </key>
+    <key name="exideas2">
+    <es>La innovación es clave para el éxito de cualquier proyecto empresarial. Aquí te presentamos algunas ideas creativas para integrarla eficazmente:</es>
+        <en>Innovation is key to the success of any business project. Here are some creative ideas to effectively integrate it:</en>
+    </key>
+    <key name="exideas3">
+    <es>1. 🚀Fomentar la Cultura de Innovación</es>
+        <en>1. 🚀Foster a Culture of Innovation</en>
+    </key>
+    <key name="exideas4">
+    <es>Crea un entorno donde todos los miembros del equipo se sientan cómodos compartiendo ideas. Realiza sesiones de brainstorming periódicas y utiliza técnicas como el "design thinking".</es>
+        <en>Create an environment where all team members feel comfortable sharing ideas. Hold regular brainstorming sessions and use techniques like "design thinking".</en>
+    </key>
+    <key name="exideas5">
+     <es>2. 🤖Implementar Tecnologías Emergentes</es>
+        <en>2. 🤖Implement Emerging Technologies</en>
+    </key>
+    <key name="exideas6">
+    <es>Explora el uso de inteligencia artificial, análisis de datos y automatización para optimizar procesos y mejorar la toma de decisiones.</es>
+        <en>Explore the use of artificial intelligence, data analytics, and automation to optimize processes and improve decision-making.</en>
+    </key>
+    <key name="exideas7">
+    <es>3. 🤝Colaboraciones Interdisciplinarias</es>
+        <en>3. 🤝Interdisciplinary Collaborations</en>
+    </key>
+    <key name="exideas8">
+    <es>Invita a expertos de diferentes áreas a colaborar en tus proyectos. La diversidad de perspectivas puede generar soluciones innovadoras.</es>
+        <en>Invite experts from different fields to collaborate on your projects. The diversity of perspectives can generate innovative solutions.</en>
+    </key>
+    <key name="exideas9">
+    <es>4. ⚙️Prototipado Rápido</es>
+        <en>4. ⚙️Rapid Prototyping</en>
+    </key>
+    <key name="exideas10">
+    <es>Desarrolla prototipos funcionales rápidamente para probar ideas antes de implementarlas a gran escala. Esto permite iterar y ajustar según la retroalimentación recibida.</es>
+        <en>Quickly develop functional prototypes to test ideas before implementing them on a large scale. This allows for iteration and adjustment based on feedback received.</en>
+    </key>
+    <key name="exideas11">
+     <es>5. 📚Capacitación Continua</es>
+        <en>5. 📚Continuous Training</en>
+    </key>
+    <key name="exideas12">
+    <es>Ofrece formación regular en nuevas herramientas y metodologías. Mantener al equipo actualizado es fundamental para fomentar la innovación.</es>
+        <en>Provide regular training on new tools and methodologies. Keeping the team updated is essential for fostering innovation.</en>
+    </key>
+    <key name="exideas13">
+     <es>6. 🗣️Escucha Activa a los Clientes</es>
+        <en>6. 🗣️Active Listening to Customers</en>
+    </key>
+    <key name="exideas14">
+     <es>Recoge feedback constante de los clientes y utilízalo para mejorar los productos o servicios ofrecidos. La voz del cliente es una fuente invaluable de innovación.</es>
+        <en>Collect constant feedback from customers and use it to improve the products or services offered. The voice of the customer is an invaluable source of innovation.</en>
+    </key>
+    <key name="exideas15">
+    <es>7. 🎨Espacios Creativos</es>
+        <en>7. 🎨Creative Spaces</en>
+    </key>
+    <key name="exideas16">
+    <es>Crea espacios físicos o virtuales que fomenten la creatividad, como salas de descanso inspiradoras o plataformas digitales para compartir ideas.</es>
+        <en>Create physical or virtual spaces that encourage creativity, such as inspiring break rooms or digital platforms for sharing ideas.</en>
+    </key>
+    <key name="exideas17">
+    <es>Estas ideas son solo el comienzo. La clave está en experimentar y adaptarse a las necesidades específicas de tu proyecto.</es>
+        <en>These ideas are just the beginning. The key is to experiment and adapt to the specific needs of your project.</en>
+    </key>
+    <!-- ***** FIN DE extras*********   -->
+
+    <!-- ***** INICIO TRADUCCION DE FAQ*********   -->
+    <key name="faqtitulo">
+    <es>Preguntas Frecuentes </es>
+    <en>Frequently Asked Questions</en>
+    </key>
+    <key name="faqmenu1">
+    <es>¿Puedo modificar?</es>
+    <en>Can I modify?</en>
+    </key>
+    <key name="faqmenu2">
+    <es>¿Cómo selecciono la metodología?</es>
+    <en>How do I select the methodology?</en>
+    </key>
+    <key name="faqmenu3">
+    <es>¿Qué herramientas recomiendan?</es>
+    <en>What tools do you recommend?</en>
+    </key>
+    <key name="faqmenu4">
+    <es>Contactar soporte</es>
+    <en>Contact support</en>
+    </key>
+    <key name="faqbienvenido">
+    <es>Preguntas Frecuentes </es>
+    <en>Frequently Asked Questions</en>
+    </key>
+    <key name="faqmodificar1">
+    <es>✏️ Modificar</es>
+        <en>✏️ Modify</en>
+    </key>
+    <key name="faqmodificar2">
+    <es>¿Puedo modificar los detalles del proyecto en curso?</es>
+        <en>Can I modify the details of the ongoing project?</en>
+    </key>
+    <key name="faqmodificar3">
+     <es>¡Sí, puedes hacerlo!</es>
+        <en>Yes, you can do it!</en>
+    </key>
+    <key name="faqmodificar4">
+    <es>En nuestro sistema de gestión de proyectos, tienes la flexibilidad de modificar los detalles de tu proyecto en cualquier momento. Esto incluye:</es>
+        <en>In our project management system, you have the flexibility to modify the details of your project at any time. This includes:</en>
+    </key>
+    <key name="faqmodificar5">
+    <es>✔️ Actualizar el cronograma del proyecto.</es>
+        <en>✔️ Update the project schedule.</en>
+    </key>
+    <key name="faqmodificar6">
+    <es>✔️ Modificar el presupuesto asignado.</es>
+        <en>✔️ Modify the assigned budget.</en>
+    </key>
+    <key name="faqmodificar7">
+    <es>✔️ Agregar o eliminar miembros del equipo.</es>
+        <en>✔️ Add or remove team members.</en>
+    </key>
+    <key name="faqmodificar8">
+    <es>✔️ Cambiar los objetivos y metas del proyecto.</es>
+        <en>✔️ Change the project's objectives and goals.</en>  
+    </key>
+    <key name="faqmodificar9">
+    <es>Para realizar modificaciones, simplemente accede a la sección de gestión del proyecto en tu panel de usuario. Allí encontrarás opciones intuitivas para realizar los cambios deseados.</es>
+        <en>To make modifications, simply access the project management section in your user panel. There you will find intuitive options to make the desired changes.</en>
+    </key>
+    <key name="faqmodificar10">
+    <es>Consejos para Modificar</es>
+        <en>Tips for Modifying</en>
+    </key>
+    <key name="faqmodificar11">
+    <es>-▫️Comunica a tu equipo:▫️ Asegúrate de informar a todos los miembros sobre los cambios realizados para mantener la alineación.</es>
+        <en>-▫️Communicate with your team:▫️ Make sure to inform all members about the changes made to maintain alignment.</en>
+    </key>
+    <key name="faqmodificar12">
+    <es>-▫️Revisa las implicaciones:▫️ Considera cómo las modificaciones pueden afectar el cronograma y el presupuesto general del proyecto.</es>
+        <en>-▫️Review the implications:▫️ Consider how modifications may affect the overall project schedule and budget.</en>
+    </key>
+    <key name="faqmodificar13">
+    <es>Ver Tutorial de Modificación</es>
+        <en>View Modification Tutorial</en>
+    </key>
+    <key name="faqmetodologia1">
+    <es>🔍 Metodología</es>
+        <en>🔍 Methodology</en>
+    </key>
+    <key name="faqmetodologia2">
+    <es>¿Cómo selecciono la metodología adecuada?</es>
+        <en>How do I select the right methodology?</en>
+    </key>
+    <key name="faqmetodologia3">
+    <es>1. Comprender el Proyecto</es>
+        <en>1. Understand the Project</en>
+    </key>
+    <key name="faqmetodologia4">
+    <es>Antes de elegir una metodología, es crucial entender las características del proyecto. Pregúntate:</es>
+        <en>Before choosing a methodology, it is crucial to understand the project's characteristics. Ask yourself:</en>
+    </key>
+    <key name="faqmetodologia5">
+    <es>¿Cuál es el objetivo principal del proyecto?</es>
+    <en>What is the main objective of the project?</en>
+    </key>
+    <key name="faqmetodologia6">
+    <es>¿Cuáles son los plazos y presupuestos disponibles?</es>
+    <en>What are the available deadlines and budgets?</en>
+    </key>
+    <key name="faqmetodologia7">
+    <es>¿Qué tan complejo es el proyecto?</es>
+    <en>How complex is the project?</en>
+    </key>
+    <key name="faqmetodologia8">
+    <es>2. Evaluar el Equipo</es>
+        <en>2. Evaluate the Team</en>
+    </key>
+    <key name="faqmetodologia9">
+    <es>Considera las habilidades y experiencias de tu equipo. Algunas metodologías requieren habilidades específicas:</es>
+        <en>Consider the skills and experiences of your team. Some methodologies require specific skills:</en>
+    </key>
+    <key name="faqmetodologia10">
+    <es>¿El equipo está familiarizado con metodologías ágiles, como Scrum o Kanban?</es>
+    <en>Is the team familiar with agile methodologies, such as Scrum or Kanban?</en>
+    </key>
+    <key name="faqmetodologia11">
+    <es>¿Se necesita un enfoque más tradicional, como Waterfall?</es>
+    <en>Is a more traditional approach, like Waterfall, needed?</en>
+    </key>
+    <key name="faqmetodologia12">
+    <es>3. Analizar el Entorno</es>
+        <en>3. Analyze the Environment</en>
+    </key>
+    <key name="faqmetodologia13">
+    <es>El entorno en el que se desarrollará el proyecto también influye en la elección de la metodología:</es>
+        <en>The environment in which the project will be developed also influences the choice of methodology:</en>
+    </key>
+    <key name="faqmetodologia14">
+    <es>¿El proyecto se desarrolla en un entorno cambiante o estable? </es>
+    <en>Is the project being developed in a changing or stable environment?</en>
+    </key>
+    <key name="faqmetodologia15">
+    <es>¿Existen regulaciones o estándares específicos que deban seguirse?</es>
+    <en>Are there specific regulations or standards that must be followed?</en>
+    </key>
+    <key name="faqmetodologia16">
+    <es>4. Seleccionar y Adaptar</es>
+        <en>4. Select and Adapt</en>
+    </key>
+    <key name="faqmetodologia17">
+    <es>Una vez que hayas considerado los factores anteriores, selecciona una metodología que se alinee con tus necesidades. Recuerda que puedes adaptar las metodologías a tu contexto específico:</es>
+        <en>Once you have considered the above factors, select a methodology that aligns with your needs. Remember that you can adapt methodologies to your specific context:</en>
+    </key>
+    <key name="faqmetodologia18">
+    <es>Combina elementos de diferentes metodologías si es necesario. </es>
+    <en>Combine elements from different methodologies if necessary. </en>
+    </key>
+    <key name="faqmetodologia19">
+    <es>Asegúrate de que todos los miembros del equipo estén alineados con la metodología elegida.</es>
+    <en>Ensure that all team members are aligned with the chosen methodology.</en>
+    </key>
+    <key name="faqmetodologia20">
+     <es>5. Revisar y Ajustar</es>
+        <en>5. Review and Adjust</en>
+    </key>
+    <key name="faqmetodologia21">
+    <es>Finalmente, una vez que el proyecto esté en marcha, revisa regularmente la eficacia de la metodología elegida:</es>
+        <en>Finally, once the project is underway, regularly review the effectiveness of the chosen methodology:</en>
+    </key>
+    <key name="faqmetodologia22">
+    <es>¿Está funcionando bien para el equipo y el proyecto?</es>
+    <en>Is it working well for the team and the project?</en>
+    </key>
+    <key name="faqmetodologia23">
+    <es>¿Es necesario hacer ajustes para mejorar los resultados?</es>
+    <en>Are adjustments needed to improve results?</en>
+    </key>
+    <key name="faqmetodologia24">
+     <es>¡Comienza tu Proyecto!</es>
+        <en>Start Your Project!</en>
+    </key>
+    <key name="faqherramienta1">
+    <es>Herramientas Recomendadas</es>
+        <en>Recommended Tools</en>
+    </key>
+    <key name="faqherramienta2">
+    <es>¿Qué herramientas recomiendan para proyectos grandes?</es>
+        <en>What tools do you recommend for large projects?</en>
+    </key>
+    <key name="faqherramienta3">
+    <es>Ideal para la planificación detallada y gestión avanzada de tareas y recursos.</es>
+        <en>Ideal for detailed planning and advanced management of tasks and resources.</en>
+    </key>
+    <key name="faqherramienta4">
+     <es>Más información</es>
+        <en>More information</en>
+    </key>
+    <key name="faqherramienta5">
+    <es>Perfecto para equipos ágiles, con seguimiento de historias de usuario y sprints.</es>
+        <en>Perfect for agile teams, with tracking of user stories and sprints.</en>
+    </key>
+    <key name="faqherramienta6">
+    <es>Una solución visual e intuitiva para la gestión de tareas mediante tableros Kanban.</es>
+        <en>A visual and intuitive solution for task management using Kanban boards.</en>
+    </key>
+    <key name="faqherramienta7">
+    <es>Excelente para colaborar en proyectos grandes, con herramientas para asignar tareas y monitorizar el progreso.</es>
+        <en>Excellent for collaborating on large projects, with tools to assign tasks and monitor progress.</en>
+    </key>
+    <key name="faqherramienta8">
+    <es>Poderoso y flexible, diseñado para gestionar proyectos de cualquier escala con integraciones personalizables.</es>
+        <en>Powerful and flexible, designed to manage projects of any scale with customizable integrations.</en>
+    </key>
+    <key name="faqherramienta9">
+    <es>Combina hojas de cálculo y herramientas de gestión para equipos de alto rendimiento.</es>
+        <en>Combines spreadsheets and management tools for high-performance teams.</en>
+    </key>
+    <key name="faqcontactar1">
+    <es>📞 Contactar Soporte</es>
+        <en>📞 Contact Support</en>
+    </key>
+    <key name="faqcontactar2">
+    <es>¿Tienes alguna pregunta o necesitas asistencia? ¡Estamos aquí para ayudarte! Completa el formulario a continuación y nuestro equipo de soporte se pondrá en contacto contigo lo antes posible.</es>
+        <en>Do you have any questions or need assistance? We are here to help! Please fill out the form below, and our support team will get in touch with you as soon as possible.</en>
+    </key>
+    <key name="faqcontactar3">
+     <es>Nombre:</es>
+        <en>Name:</en>
+    </key>
+    <key name="faqcontactar4">
+    <es>Correo Electrónico:</es>
+        <en>Email Address:</en>
+    </key>
+    <key name="faqcontactar5">
+    <es>Mensaje:</es>
+        <en>Message:</en>
+    </key>
+    <key name="faqcontactar6">
+    <es>Enviar Mensaje</es>
+        <en>Send Message</en>
+    </key>
+    <key name="faqcontactar7">
+    <es>También puedes contactarnos directamente a través de nuestro correo electrónico:</es>
+        <en>You can also contact us directly via our email:</en>
+    </key>
+        <!-- ***** FIN DE FAQ*********   -->
+
+    <!-- ***** INICIO TRADUCCION DE CONTACTO*********   -->
+    <key name="contatitulo">
+    <es>Contacto</es>
+    <en>Contact</en>
+    </key>
+    <key name="contamenu1">
+    <es>Formulario de Sugerencias</es>
+    <en>Suggestion Form</en>
+    </key>
+    <key name="contamenu2">
+    <es>Redes Sociales</es>
+    <en>Social networks</en>
+    </key>
+    <key name="contabienvenida">
+    <es>Contactactanos</es>
+    <en>Contact us</en>
+    </key>
+    <key name="contabienvenida1">
+    <es>Contactactanos</es>
+    <en>Contact us</en>
+    </key>
+    <key name="contaformulario">
+    <es>Si deseas más información sobre nuestros servicios personalizados o tienes alguna consulta, completa el formulario y nos pondremos en contacto contigo rápidamente.</es>
+    <en>If you would like more information about our personalized services or have any questions, please fill out the form and we will get back to you as soon as possible.</en>
+    </key>
+    <key name="contaformulario3">
+    <es>Nombre</es>
+    <en>Name</en>
+    <key name="contaformulario4">
+    <es>Correo Electrónico</es>
+    <en>Email</en>
+    </key>    
+    <key name="contaformulario5">
+    <es>Mensaje</es>
+    <en>Msssage</en>
+    </key> 
+    <key name="contaformulario6">
+    <es>Enviar</es>
+    <en>Send</en>
+    <key name="contredes1">
+    <es>Redes Sociales</es>
+    <en>Social networks</en>
+    </key>
+    <key name="contredes2">
+    <es>Síguenos en nuestras redes sociales y mantente al tanto de nuestras actualizaciones.</es>
+    <en>Follow us on our social networks and stay up to date with our updates.</en>
+    </key>
+    <!-- ***** FIN DE CONTACTO*********   -->
+
+
+</traslations>

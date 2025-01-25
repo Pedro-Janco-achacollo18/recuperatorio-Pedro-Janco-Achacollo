@@ -1,0 +1,23 @@
+[
+    {
+        "username": "admin",
+        "password": "admin123",
+        "role": "administrador",
+        "name": "Cristina Mamani",
+        "email": "cristina@gmail.com"
+    },
+    {
+        "username": "cliente",
+        "password": "cliente123",
+        "role": "cliente",
+        "name": "Alejandro Condori",
+        "email": "alejandro@gmail.com"
+    },
+    {
+        "username": "invitado",
+        "password": "invitado123",
+        "role": "invitado",
+        "name": "Gerardo Mendez",
+        "email": "gerardo@gmail.com"
+    }
+]

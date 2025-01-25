@@ -1,0 +1,49 @@
+{
+    "Inicio": [
+        {"nombre": { "es": "Descripción del servicio de gestión de proyectos", "en": "Project Management Service Description" }, "link": "inicio.html#descripcion" },
+        {"nombre": { "es": "Importancia de una gestión eficiente para el éxito empresarial", "en": "Importance of efficient management for business success" }, "link": "inicio.html#importancia"},
+        {"nombre": { "es": "Qué puedes personalizar en tu plan", "en": "What you can customize in your plan" }, "link": "inicio.html#personalizar"},
+        {"nombre": { "es": "Preguntas frecuentes", "en": "Frequently asked questions" }, "link": "inicio.html#preguntas"}
+    ],
+    "Formulario de registro": [
+        {"nombre": { "es": "Tipo de proyecto", "en": "Project type" }, "link": "formulario.html" },
+        {"nombre": { "es": "Objetivos principales", "en": "Main objectives" }, "link": "formulario.html"},
+        {"nombre": { "es": "Presupuesto y plazos estimados", "en": "Budget and estimated deadlines" }, "link": "formulario.html"},
+        {"nombre": { "es": "Tamaño del equipo involucrado", "en": "Team size involved" }, "link": "formulario.html"}
+    ],
+    "Detalles del Proyecto": [
+        { "nombre": { "es": "Fases principales y entregables", "en": "Main phases and deliverables" }, "link": "detalles.html#fases" },
+        {"nombre": { "es": "Cronograma tentativo", "en": "Tentative schedule" }, "link": "detalles.html#cronograma"},
+        {"nombre": { "es": "Recursos necesarios", "en": "Tentative schedule" }, "link": "detalles.html#recursos"},
+        {"nombre": { "es": "Plan de comunicación y reportes", "en": "Communication and reporting plan" }, "link": "detalles.html#plan"}
+    ],
+    "Recomendaciones": [
+        { "nombre": { "es": "Artículos sobre gestión eficiente de proyectos", "en": "Articles on efficient project management" }, "link": "recomendaciones.html" },
+        {"nombre": { "es": "Consejos para optimizar recursos", "en": "Tips to optimize resources" }, "link": "recomendaciones.html"},
+        {"nombre": { "es": "Videos sobre casos de éxito en diferentes rubros", "en": "Videos sobre casos de éxito en diferentes rubros" }, "link": "recomendaciones.html"},
+        {"nombre": { "es": "Proveedores recomendados de software de gestión", "en": "Proveedores recomendados de software de gestión" }, "link": "recomendaciones.html"}
+    ],
+    "Comunidad":[
+        {"nombre": { "es": "Foros de intercambio de mejores prácticas", "en": "Best Practices Exchange Forums" }, "link": "comunidad.html" },
+        {"nombre": { "es": "Encuentros para discutir tendencias en gestión de proyectos", "en": "Meetings to discuss trends in project management" }, "link": "comunidad.html"},
+        {"nombre": { "es": "Consejos de expertos en la industria", "en": "Advice from industry experts" }, "link": "comunidad.html"},
+        {"nombre": { "es": "Discusión sobre herramientas de productividad", "en": "Productivity Tools Discussion" }, "link": "comunidad.html"}
+    ],
+    "Extras": [
+        { "nombre": { "es": "Plantillas para cronogramas y presupuestos", "en": "Templates for schedules and budgets" }, "link": "extras.html" },
+        {"nombre": { "es": "Videos tutoriales sobre metodologías de gestión (ágil, waterfall)", "en": "Tutorial videos on management methodologies (agile, waterfall)" }, "link": "extras.html"},
+        {"nombre": { "es": "Casos de estudio inspiradores", "en": "Inspiring case studies" }, "link": "extras.html"},
+        {"nombre": { "es": "Ideas para integrar innovación en los proyectos", "en": "Ideas to integrate innovation into projects" }, "link": "extras.html"}
+    ],
+    "FAQ": [
+        { "nombre": { "es": "¿Puedo modificar los detalles del proyecto en curso?", "en": "Can I modify the details of the current project?" }, "link": "faq.html" },
+        {"nombre": { "es": "¿Cómo selecciono la metodología adecuada?", "en": "How do I select the appropriate methodology?" }, "link": "faq.html"},
+        {"nombre": { "es": "¿Qué herramientas recomiendan para proyectos grandes?", "en": "What tools do you recommend for large projects?" }, "link": "faq.html"},
+        {"nombre": { "es": "Contactar soporte", "en": "Contact support" }, "link": "faq.html"}
+    ],
+    "Contacto": [
+        { "nombre": { "es": "Formulario de contacto", "en": "Contact form" }, "link": "contacto.html" },
+        {"nombre": { "es": "Redes sociales", "en": "Social networks" }, "link": "contacto.html"}
+    ]
+  }
+  

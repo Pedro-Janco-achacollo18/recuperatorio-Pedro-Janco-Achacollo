@@ -1,0 +1,46 @@
+
+  {
+    "en": {
+      "formulario":"Registration Form",
+      "title": "Project Management",
+      "gestion": "Project Management",
+      "header-description": "Manage your projects efficiently and professionally.",
+      "form-title": "Project Registration",
+      "label-project-type": "Project Type:",
+      "label-objectives": "Main Objectives:",
+      "label-budget": "Estimated Budget ($):",
+      "label-team-size": "Team Size:",
+      "btn-save": "Save",
+      "btn-reset": "Clear",
+      "table-title": "Registered Projects",
+      "table-id": "ID",
+      "table-type": "Type",
+      "table-objectives": "Objectives",
+      "table-budget": "Budget",
+      "table-team-size": "Team",
+      "table-actions": "Actions",
+      "formu":"Welcome to the question form"
+    },
+    "es": {
+      "formulario":"Formulario de Registro",
+      "title": "Gestión de Proyectos",
+      "gestion": "Gestión de Proyectos",
+      "header-description": "Administra tus proyectos de manera eficiente y profesional.",
+      "form-title": "Registro de Proyecto",
+      "label-project-type": "Tipo de Proyecto:",
+      "label-objectives": "Objetivos Principales:",
+      "label-budget": "Presupuesto Estimado ($):",
+      "label-team-size": "Tamaño del Equipo:",
+      "btn-save": "Guardar",
+      "btn-reset": "Limpiar",
+      "table-title": "Proyectos Registrados",
+      "table-id": "ID",
+      "table-type": "Tipo",
+      "table-objectives": "Objetivos",
+      "table-budget": "Presupuesto",
+      "table-team-size": "Equipo",
+      "table-actions": "Acciones",
+      "formu":"Bienvenido al formulario de preguntas"
+    }
+  }
+  

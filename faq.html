@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="faqtitulo">Preguntas Frecuentes </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        .navbar {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+        .section {
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar fixed top-0 left-0 right-0 p-4 bg-gray-800 shadow-lg z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-white text-2xl font-bold">P. J. A.</div>    
+            <!-- Selector de idioma -->
+            <div>
+                <select id="language-selector" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>          
+                </select>
+            </div>       
+            <!-- Botón para mostrar el menú en dispositivos móviles -->
+            <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent absolute md:static top-16 left-0 right-0 w-full md:w-auto px-4 md:px-0 py-4 md:py-0 shadow-lg md:shadow-none">
+                <li><a href="#modificar" class="block text-gray-300 hover:text-white" data-i18n="faqmenu1">¿Puedo modificar?</a></li>
+                <li><a href="#metodologia" class="block text-gray-300 hover:text-white" data-i18n="faqmenu2">¿Cómo selecciono la metodología?</a></li>
+                <li><a href="#herramienta" class="block text-gray-300 hover:text-white" data-i18n="faqmenu3">¿Qué herramientas recomiendan ?</a></li>
+                <li><a href="#contactar" class="block text-gray-300 hover:text-white" data-i18n="faqmenu4">Contactar soporte </a></li>
+                <li><button onclick="history.back()" class="btn btn-secondary w-100 py-2 mt-3 fw-bold">Atrás</button></li>
+            </ul>
+        </div>
+    </nav>
+
+        <!--scrip para la internalizacion del contenido-->
+        <script>
+            //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                var name = keys[i].getAttribute("name");
+                var value = keys[i].getElementsByTagName(language)[0].textContent;
+                translations[name] = value;
+                }
+
+                i18next.init(
+                {
+                    lng: language,
+                    resources: {
+                    [language]: {
+                        translation: translations,
+                    },
+                    },
+                },
+                function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                    });
+                }
+                );
+            }
+            };
+            xhr.send();
+        }
+
+        // Cambiar idioma con el selector
+        document.getElementById("language-selector").addEventListener("change", function () {
+            loadTranslations(this.value);
+        });
+
+        // Idioma predeterminado al cargar la página
+        window.onload = function () {
+            loadTranslations("es");
+        };
+        </script>
+        <!--Aqui termina el script de la internalizacion del contenido-->
+
+
+    <!-- Contenido principal -->
+    <div class="pt-20"> <!-- Espacio para el menú fijo -->
+        <!-- Sección de inicio -->
+        <section id="inicio" class="relative mb-8">
+            <!-- Imagen de fondo -->
+            <img src="imgsub/fondo2.avif" 
+                 alt="Fondo" 
+                 class="w-full h-[60vh] md:h-[80vh] object-cover filter brightness-75 rounded-lg shadow-lg">
+            <!-- Texto superpuesto -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 animate_animated animate_fadeIn" 
+                    data-i18n="faqbienvenido">
+                    Preguntas Frecuentes
+                </h1>
+            </div>
+        </section>
+
+        <!-- Secciones -->
+        <div class="mt-4 space-y-6 px-4 md:px-8">
+            <!-- Sección 1: Modificar -->
+            <section id="modificar" class="section bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                <h2 class="text-3xl font-bold text-white text-center mb-4 border-b-2 border-yellow-500 pb-2" data-i18n="faqmodificar1">✏️ Modificar</h2>
+                <p class="text-gray-300 text-center mb-6" data-i18n="faqmodificar2">¿Puedo modificar los detalles del proyecto en curso?</p>
+                
+                <div class="mt-4">
+                    <h3 class="text-xl font-semibold text-yellow-400 mb-2" data-i18n="faqmodificar3">¡Sí, puedes hacerlo!</h3>
+                    <p class="text-gray-200 mb-4" data-i18n="faqmodificar4">
+                        En nuestro sistema de gestión de proyectos, tienes la flexibilidad de modificar los detalles de tu proyecto en cualquier momento. Esto incluye:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-200 mt-2 space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-green-50 mr-2" data-i18n="faqmodificar5">✔️ Actualizar el cronograma del proyecto.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-50 mr-2" data-i18n="faqmodificar6">✔️ Modificar el presupuesto asignado.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-50 mr-2" data-i18n="faqmodificar7">✔️ Agregar o eliminar miembros del equipo.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-50 mr-2"data-i18n="faqmodificar8">✔️ Cambiar los objetivos y metas del proyecto.</span>
+                        </li>
+                    </ul>
+            
+                    <p class="text-gray-200 mt-4 mb-6"data-i18n="faqmodificar9">
+                        Para realizar modificaciones, simplemente accede a la sección de gestión del proyecto en tu panel de usuario. Allí encontrarás opciones intuitivas para realizar los cambios deseados.
+                    </p>
+            
+                    <h3 class="text-xl font-semibold text-yellow-400 mt-4 mb-2" data-i18n="faqmodificar10">Consejos para Modificar</h3>
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+                        <p class="text-gray-200 mb-2" data-i18n="faqmodificar11">-▫️Comunica a tu equipo:▫️   Asegúrate de informar a todos los miembros sobre los cambios realizados para mantener la alineación.</p>
+                        <p class="text-gray-200" data-i18n="faqmodificar12">-▫️Revisa las implicaciones:▫️   Considera cómo las modificaciones pueden afectar el cronograma y el presupuesto general del proyecto.</p>
+                    </div>
+            
+                    <div class="mt-6 text-center">
+                        <button class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg transform hover:scale-105" data-i18n="faqmodificar13">Ver Tutorial de Modificación</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección 2: Metodologia -->
+            <section id="metodologia" class="section bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-3xl font-bold text-white text-center mb-4" data-i18n="faqmetodologia1">🔍 Metodología</h2>
+                <p class="text-gray-400 text-center mb-6" data-i18n="faqmetodologia2">¿Cómo selecciono la metodología adecuada?</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="faqmetodologia3">1. Comprender el Proyecto</span> 
+                        </h3>
+                        <p class="text-gray-300 mt-2" data-i18n="faqmetodologia4">
+                            Antes de elegir una metodología, es crucial entender las características del proyecto. Pregúntate:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-2">
+                            <li data-i18n="faqmetodologia5">¿Cuál es el objetivo principal del proyecto?</li>
+                            <li data-i18n="faqmetodologia6">¿Cuáles son los plazos y presupuestos disponibles?</li>
+                            <li data-i18n="faqmetodologia7">¿Qué tan complejo es el proyecto?</li>
+                        </ul>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="faqmetodologia8">2. Evaluar el Equipo</span> 
+                        </h3>
+                        <p class="text-gray-300 mt-2" data-i18n="faqmetodologia9">
+                            Considera las habilidades y experiencias de tu equipo. Algunas metodologías requieren habilidades específicas:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-2">
+                            <li data-i18n="faqmetodologia10">¿El equipo está familiarizado con metodologías ágiles, como Scrum o Kanban?</li>
+                            <li data-i18n="faqmetodologia11"> ¿Se necesita un enfoque más tradicional, como Waterfall?</li>
+                        </ul>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="faqmetodologia12">3. Analizar el Entorno</span> 
+                        </h3>
+                        <p class="text-gray-300 mt-2" data-i18n="faqmetodologia13">
+                            El entorno en el que se desarrollará el proyecto también influye en la elección de la metodología:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-2" >
+                            <li data-i18n="faqmetodologia14">¿El proyecto se desarrolla en un entorno cambiante o estable?</li>
+                            <li data-i18n="faqmetodologia15">¿Existen regulaciones o estándares específicos que deban seguirse?</li>
+                        </ul>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="faqmetodologia16">4. Seleccionar y Adaptar</span> 
+                        </h3>
+                        <p class="text-gray-300 mt-2"data-i18n="faqmetodologia17">
+                            Una vez que hayas considerado los factores anteriores, selecciona una metodología que se alinee con tus necesidades. Recuerda que puedes adaptar las metodologías a tu contexto específico:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-2" >
+                            <li data-i18n="faqmetodologia18">Combina elementos de diferentes metodologías si es necesario.</li>
+                            <li data-i18n="faqmetodologia19">Asegúrate de que todos los miembros del equipo estén alineados con la metodología elegida.</li>
+                        </ul>
+                    </div>
+            
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-yellow-400 flex items-center">
+                            <span class="mr-2" data-i18n="faqmetodologia20">5. Revisar y Ajustar</span> 
+                        </h3>
+                        <p class="text-gray-300 mt-2" data-i18n="faqmetodologia21">
+                            Finalmente, una vez que el proyecto esté en marcha, revisa regularmente la eficacia de la metodología elegida:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mt-2">
+                            <li data-i18n="faqmetodologia22">¿Está funcionando bien para el equipo y el proyecto?</li>
+                            <li data-i18n="faqmetodologia23">¿Es necesario hacer ajustes para mejorar los resultados?</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- Botón de acción -->
+                <div class="mt-8 text-center">
+                    <button class="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300" data-i18n="faqmetodologia24">¡Comienza tu Proyecto!</button>
+                </div>
+            
+            </section>
+            
+
+            <!-- Sección 3: Herramienta -->
+            <section id="herramienta" class="section bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                <h2 class="text-3xl font-bold text-center text-blue-400 mb-4 uppercase" data-i18n="faqherramienta1">Herramientas Recomendadas</h2>
+                <p class="text-gray-300 text-lg text-center mb-6" data-i18n="faqherramienta2">
+                    ¿Qué herramientas recomiendan para proyectos grandes?
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Herramienta 1 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-2">Microsoft Project</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta3">
+                            Ideal para la planificación detallada y gestión avanzada de tareas y recursos.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.microsoft.com/en-us/microsoft-365/project/project-management-software" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Herramienta 2 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-green-400 mb-2">Jira Software</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta5">
+                            Perfecto para equipos ágiles, con seguimiento de historias de usuario y sprints.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.atlassian.com/software/jira" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Herramienta 3 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-purple-400 mb-2">Trello</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta6">
+                            Una solución visual e intuitiva para la gestión de tareas mediante tableros Kanban.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://trello.com/" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Herramienta 4 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-pink-400 mb-2">Asana</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta7">
+                            Excelente para colaborar en proyectos grandes, con herramientas para asignar tareas y monitorizar el progreso.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://asana.com/" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Herramienta 5 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-red-400 mb-2">Monday.com</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta8">
+                            Potente y flexible, diseñado para gestionar proyectos de cualquier escala con integraciones personalizables.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://monday.com/" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Herramienta 6 -->
+                    <article class="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-teal-400 mb-2">Smartsheet</h3>
+                        <p class="text-gray-300" data-i18n="faqherramienta9">
+                            Combina hojas de cálculo y herramientas de gestión para equipos de alto rendimiento.
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.smartsheet.com/" target="_blank" class="text-blue-500 underline hover:text-blue-300" data-i18n="faqherramienta4">
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+
+            <!-- Sección 4: Contactar -->
+            <section id="contactar" class="section bg-gradient-to-r from-blue-800 via-purple-800 to-gray-900 p-12 rounded-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <h2 class="text-4xl font-extrabold text-white text-center mb-6 tracking-wide uppercase" data-i18n="faqcontactar1">📞 Contactar Soporte</h2>
+                <p class="text-gray-200 text-lg text-center mb-8 leading-relaxed" data-i18n="faqcontactar2">
+                    ¿Tienes alguna pregunta o necesitas asistencia? ¡Estamos aquí para ayudarte! Completa el formulario a continuación y nuestro equipo de soporte se pondrá en contacto contigo lo antes posible.
+                </p>                
+                <form class="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
+                    <div>
+                        <label for="nombre" class="block text-gray-300 font-semibold mb-2 text-lg" data-i18n="faqcontactar3">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-purple-500 transition duration-300" placeholder="Escribe tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 font-semibold mb-2 text-lg" data-i18n="faqcontactar4">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-purple-500 transition duration-300" placeholder="Escribe tu correo electrónico" required>
+                    </div>
+                    <div>
+                        <label for="mensaje" class="block text-gray-300 font-semibold mb-2 text-lg" data-i18n="faqcontactar5">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" class="w-full p-4 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring focus:ring-purple-500 transition duration-300" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <button  class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-lg font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300" data-i18n="faqcontactar6">
+                        Enviar Mensaje
+                    </button>
+                </form>
+                <p class="text-gray-400 text-sm text-center mt-6" data-i18n="faqcontactar7">
+                    También puedes contactarnos directamente a través de nuestro correo electrónico: 
+                    <a href="mailto:support@tuempresa.com" class="text-purple-400 underline hover:text-purple-500 transition duration-200">support@tuempresa.com</a>
+                </p>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a class="flex items-center text-purple-400 hover:text-purple-500 transition duration-200 space-x-2">
+                        <i class="fab fa-facebook-f"></i><span>Facebook</span>
+                    </a>
+                    <a class="flex items-center text-purple-400 hover:text-purple-500 transition duration-200 space-x-2">
+                        <i class="fab fa-twitter"></i><span>Twitter</span>
+                    </a>
+                    <a class="flex items-center text-purple-400 hover:text-purple-500 transition duration-200 space-x-2">
+                        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+                    </a>
+                </div>
+            </section>
+            
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-3 mt-4">
+        <div class="container mx-auto text-center">
+            <p data-i18n="recofooter">&copy; 2025. Derechos reservados. Pedro Janco Achacollo</p>
+            <div class="social-icons mt-3 flex justify-center space-x-4">
+                <a class="text-white"><i class="fab fa-facebook-f"></i></a>
+                <a class="text-white"><i class="fab fa-instagram"></i></a>
+                <a class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

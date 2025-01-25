@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="comutitulo">Comunidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Asegúrate de incluir Bootstrap correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <style>                                                               
+        body {
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        .navbar {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+        .section {
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed top-0 left-0 right-0 p-4 bg-gray-800 shadow-lg z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-white text-2xl font-bold">P. J. A.</div>    
+            <!-- Selector de idioma -->
+            <div>
+                <select id="language-selector" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>          
+                </select>
+            </div>       
+            <!-- Botón para mostrar el menú en dispositivos móviles -->
+            <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-800 md:bg-transparent absolute md:static top-16 left-0 right-0 w-full md:w-auto px-4 md:px-0 py-4 md:py-0 shadow-lg md:shadow-none">
+                <li><a href="#foros" class="block text-gray-300 hover:text-white" data-i18n="comumenu1">Foros</a></li>
+                <li><a href="#encuentros" class="block text-gray-300 hover:text-white" data-i18n="comumenu2">Encuentros</a></li>
+                <li><a href="#consejos" class="block text-gray-300 hover:text-white" data-i18n="comumenu3">Consejos</a></li>
+                <li><a href="#discusiones" class="block text-gray-300 hover:text-white" data-i18n="comumenu4">Discusiones</a></li>
+                <li><button onclick="history.back()" class="btn btn-secondary w-100 py-2 mt-3 fw-bold">Atrás</button></li>
+            </ul>
+        </div>        
+    </nav>
+    
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+    
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+    
+        <!--scrip para la internalizacion del contenido-->
+        <script>
+            //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                var name = keys[i].getAttribute("name");
+                var value = keys[i].getElementsByTagName(language)[0].textContent;
+                translations[name] = value;
+                }
+
+                i18next.init(
+                {
+                    lng: language,
+                    resources: {
+                    [language]: {
+                        translation: translations,
+                    },
+                    },
+                },
+                function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                    });
+                }
+                );
+            }
+            };
+            xhr.send();
+        }
+
+        // Cambiar idioma con el selector
+        document.getElementById("language-selector").addEventListener("change", function () {
+            loadTranslations(this.value);
+        });
+
+        // Idioma predeterminado al cargar la página
+        window.onload = function () {
+            loadTranslations("es");
+        };
+        </script>
+        <!--Aqui termina el script de la internalizacion del contenido-->
+
+    <!-- Contenido principal -->
+    <div class="pt-20"> <!-- Espacio para el menú fijo -->
+        <!-- Sección de inicio -->
+        <section id="inicio" class="relative mb-8">
+            <!-- Imagen de fondo -->
+            <img src="imgsub/fondo2.avif" 
+                 alt="Fondo" 
+                 class="w-full h-[60vh] md:h-[80vh] object-cover filter brightness-75 rounded-lg shadow-lg">
+            <!-- Texto superpuesto -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 animate_animated animate_fadeIn" 
+                    data-i18n="comubienvenida">
+                    Bienvenido a nuestra comunidad
+                </h1>
+            </div>
+        </section>
+        
+
+        <!-- Secciones -->
+        <div class="mt-4 space-y-6 px-4 md:px-8">
+            <!-- Sección 1: FOROS -->
+            <section id="foros" class="container mt-5">
+                <h1 class="text-center" data-i18n="comuforos1">Foros de Intercambio de Mejores Prácticas</h1>
+                <p class="text-center mb-4" data-i18n="comuforos2">Únete a la conversación y comparte tus ideas sobre el Gestor de Proyectos Empresariales Personalizados.</p>
+            
+                <!-- Botón desplegable para seleccionar un tema de discusión -->
+                <div class="mb-4 text-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle mt-2" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="comuforos3">
+                            Selecciona un Tema
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="openForum('gestionEquipos')">Gestión de Equipos</a></li>
+                            <li><a class="dropdown-item" onclick="openForum('planificacion')">Planificación y Organización</a></li>
+                            <li><a class="dropdown-item" onclick="openForum('automatizacion')">Automatización de Tareas</a></li>
+                            <li><a class="dropdown-item" onclick="openForum('analisisRendimiento')">Análisis de Rendimiento</a></li>
+                            <li><a class="dropdown-item" onclick="openForum('integracionHerramientas')">Integración de Herramientas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- Contenedor para mostrar el foro seleccionado -->
+                <div id="forumContainer" class="mt-4 p-5 bg-secondary border rounded"></div>
+            </section>
+            
+            <script>
+                // Datos de temas con imágenes
+                const forumData = {
+                    gestionEquipos: {
+                        title: "Gestión de Equipos",
+                        description: "Comparte estrategias efectivas para liderar equipos y fomentar la colaboración en proyectos empresariales.",
+                        image: "imgsub/foro1.jpg"
+                    },
+                    planificacion: {
+                        title: "Planificación y Organización",
+                        description: "Discute metodologías para planificar y organizar proyectos de manera eficiente.",
+                        image: "imgsub/foro2.jpg"
+                    },
+                    automatizacion: {
+                        title: "Automatización de Tareas",
+                        description: "Comparte tus experiencias sobre cómo automatizar procesos para ahorrar tiempo y reducir errores.",
+                        image: "imgsub/foro3.jpg"
+                    },
+                    analisisRendimiento: {
+                        title: "Análisis de Rendimiento",
+                        description: "Discute técnicas para medir y analizar el rendimiento en proyectos empresariales.",
+                        image: "imgsub/foro4.jpg"
+                    },
+                    integracionHerramientas: {
+                        title: "Integración de Herramientas",
+                        description: "Comparte tus mejores prácticas para integrar herramientas tecnológicas en la gestión de proyectos.",
+                        image: "imgsub/foro5.jpg"
+                    }
+                };
+            
+                // Función para abrir el foro correspondiente
+                function openForum(topic) {
+                    const forumContainer = document.getElementById('forumContainer');
+                    forumContainer.innerHTML = ''; // Limpiar contenido anterior
+            
+                    const selectedTopic = forumData[topic];
+            
+                    if (selectedTopic) {
+                        const forumContent = `
+                            <h2>${selectedTopic.title}</h2>
+                            <img src="${selectedTopic.image}" alt="${selectedTopic.title}" class="img-fluid rounded mb-2" style="max-width: 150px; height: 100px;">
+                            <p>${selectedTopic.description}</p>
+                            <textarea class="form-control mb-2" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                            <button class="btn btn-primary">Enviar Comentario</button>
+                        `;
+            
+                        forumContainer.innerHTML = forumContent; // Mostrar contenido del foro seleccionado
+                    }
+                }
+            </script>
+
+            <!-- Sección 2: ENCUENTROS -->
+            <section id="encuentros" class="container mt-4">
+                <h1 class="text-center text-3xl font-bold" data-i18n="comuencuentros1">Encuentros para discutir tendencias en gestión de proyectos</h1>
+                <p class="text-center mb-4" data-i18n="comuencuentros2">Explora nuevas ideas y comparte tus perspectivas sobre el Gestor de Proyectos Empresariales Personalizados.</p>
+            
+                <!-- Selección de Tema -->
+                <div class="mb-4 text-center">
+                    <label for="topicsSelect" class="block text-lg font-medium text-gray-700" data-i18n="comuencuentros3">Elige un tema:</label>
+                    <select id="topicsSelect" class="form-select w-full md:w-1/2 mx-auto border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+                        <option value="" data-i18n="comuencuentros4">Selecciona un tema</option>
+                        <option value="tendenciasAgiles" data-i18n="comuencuentros8">Tendencias en metodologías ágiles</option>
+                        <option value="tecnologiasInnovadoras" data-i18n="comuencuentros9">Tecnologías innovadoras en gestión</option>
+                        <option value="automatizacionProcesos" data-i18n="comuencuentros10">Automatización de procesos</option>
+                        <option value="analisisImpacto" data-i18n="comuencuentros11">Análisis de impacto empresarial</option>
+                        <option value="casosExito" data-i18n="comuencuentros12">Casos de éxito en proyectos empresariales</option>
+                    </select>
+                </div>
+            
+                <!-- Botón para cargar comentarios -->
+                <div class="text-center mb-4">
+                    <button class="btn btn-warning" onclick="loadComments()" data-i18n="comuencuentros5">Cargar Comentarios</button>
+                </div>
+            
+                <!-- Contenedor para mostrar comentarios -->
+                <div id="commentsContainer" class="mt-4 p-3 bg-light text-blue-900 border rounded"></div>
+            
+                <!-- Formulario para enviar opinión -->
+                <div id="opinionForm" class="mt-4 hidden">
+                    <h2 class="text-lg font-semibold" data-i18n="comuencuentros6">Comparte tu opinión:</h2>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                    <button class="btn btn-primary" onclick="submitOpinion()" data-i18n="comuencuentros7">Enviar Opinión</button>
+                </div>
+            </section>
+            
+            <script>
+                // Datos de temas con comentarios iniciales
+                const topicsData = {
+                    tendenciasAgiles: {
+                        title: "Tendencias en metodologías ágiles",
+                        comments: [
+                            "Scrum ha revolucionado la forma en que manejamos proyectos.",
+                            "¿Alguien ha probado Kanban en proyectos grandes?"
+                        ]
+                    },
+                    tecnologiasInnovadoras: {
+                        title: "Tecnologías innovadoras en gestión",
+                        comments: [
+                            "El uso de inteligencia artificial está transformando la planificación de proyectos.",
+                            "Herramientas como Trello y Jira están haciendo maravillas en nuestra empresa."
+                        ]
+                    },
+                    automatizacionProcesos: {
+                        title: "Automatización de procesos",
+                        comments: [
+                            "RPA ha reducido significativamente nuestros tiempos de entrega.",
+                            "¿Qué herramientas de automatización recomiendan para pequeñas empresas?"
+                        ]
+                    },
+                    analisisImpacto: {
+                        title: "Análisis de impacto empresarial",
+                        comments: [
+                            "El análisis de datos es clave para tomar decisiones informadas.",
+                            "Herramientas como Tableau son fundamentales para visualizar resultados."
+                        ]
+                    },
+                    casosExito: {
+                        title: "Casos de éxito en proyectos empresariales",
+                        comments: [
+                            "Nuestro proyecto de transformación digital fue un gran éxito gracias a la buena planificación.",
+                            "La colaboración entre equipos marcó la diferencia en nuestro último proyecto."
+                        ]
+                    }
+                };
+            
+                // Función para cargar comentarios
+                function loadComments() {
+                    const selectElement = document.getElementById('topicsSelect');
+                    const selectedValue = selectElement.value;
+            
+                    const commentsContainer = document.getElementById('commentsContainer');
+                    commentsContainer.innerHTML = ''; // Limpiar contenido anterior
+            
+                    const selectedTopic = topicsData[selectedValue];
+            
+                    if (selectedTopic) {
+                        // Mostrar comentarios existentes
+                        selectedTopic.comments.forEach(comment => {
+                            const commentElement = document.createElement('p');
+                            commentElement.textContent = comment;
+                            commentsContainer.appendChild(commentElement);
+                        });
+            
+                        // Mostrar el formulario para enviar opinión
+                        document.getElementById('opinionForm').classList.remove('hidden');
+                    } else {
+                        commentsContainer.innerHTML = '<p class="text-red-500">Por favor, selecciona un tema.</p>';
+                        document.getElementById('opinionForm').classList.add('hidden');
+                    }
+                }
+            
+                // Función para enviar opinión
+                function submitOpinion() {
+                    const selectElement = document.getElementById('topicsSelect');
+                    const selectedValue = selectElement.value;
+            
+                    const commentTextArea = document.querySelector('#opinionForm textarea');
+            
+                    if (selectedValue && commentTextArea.value.trim() !== "") {
+                        // Agregar nuevo comentario al tema seleccionado
+                        topicsData[selectedValue].comments.push(commentTextArea.value.trim());
+            
+                        // Limpiar el área de texto
+                        commentTextArea.value = '';
+            
+                        // Recargar comentarios
+                        loadComments();
+            
+                        alert("Tu opinión ha sido enviada exitosamente.");
+                    } else {
+                        alert("Por favor, selecciona un tema y escribe tu comentario.");
+                    }
+                }
+            </script>
+
+            <!-- Sección 3: CONSEJOS -->
+            <section id="consejos" class="section bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl">
+                <h2 class="text-2xl font-semibold mb-4 text-center text-blue-400" data-i18n="comuconsejos1">Consejos de Expertos en la Industria</h2>
+                <p class="text-center text-gray-300 mb-6"data-i18n="comuconsejos2">
+                    Descubre estrategias y recomendaciones de profesionales destacados para optimizar la gestión de proyectos empresariales.
+                </p>
+            
+                <!-- Lista de consejos destacados -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Consejo 1 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos3">1. Define Objetivos Claros</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos4">
+                            Antes de iniciar un proyecto, asegúrate de establecer metas específicas y medibles. Esto ayudará a mantener a tu equipo enfocado.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos5">- Ana López, Gerente de Proyectos</span>
+                    </div>
+            
+                    <!-- Consejo 2 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos6">2. Prioriza la Comunicación</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos7">
+                            Mantén una comunicación abierta y efectiva entre los miembros del equipo y las partes interesadas para evitar malentendidos.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos8">- Carlos Rivera, Consultor Empresarial</span>
+                    </div>
+            
+                    <!-- Consejo 3 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos9">3. Adopta Metodologías Ágiles</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos10">
+                            Las metodologías ágiles como Scrum y Kanban permiten adaptarte rápidamente a los cambios y maximizar la eficiencia del equipo.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos11">- Laura Gómez, Especialista en Metodologías Ágiles</span>
+                    </div>
+            
+                    <!-- Consejo 4 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos12">4. Automatiza Tareas Repetitivas</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos13">
+                            Utiliza herramientas tecnológicas para automatizar procesos rutinarios y enfócate en las tareas estratégicas.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos14">- Jorge Martínez, Desarrollador de Software</span>
+                    </div>
+            
+                    <!-- Consejo 5 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos15">5. Evalúa los Riesgos</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos16">
+                            Identifica posibles riesgos desde el inicio del proyecto y desarrolla un plan de contingencia para cada uno.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos17">- María Fernández, Analista de Riesgos</span>
+                    </div>
+            
+                    <!-- Consejo 6 -->
+                    <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+                        <h3 class="text-lg font-semibold text-blue-300" data-i18n="comuconsejos18">6. Invierte en Capacitación</h3>
+                        <p class="text-gray-300 mt-2" data-i18n="comuconsejos19">
+                            Un equipo bien capacitado está mejor preparado para enfrentar los desafíos del proyecto y garantizar el éxito.
+                        </p>
+                        <span class="text-sm text-gray-400 block mt-2" data-i18n="comuconsejos20">- Sebastián Rojas, Coach Empresarial</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección 4: DISCUCIONES -->
+            <section id="discusiones" class="container mt-4">
+                <h1 class="text-center text-3xl font-bold" data-i18n="comudiscusiones1">
+                    Discusión sobre herramientas de productividad
+                </h1>
+                <p class="text-center mb-4" data-i18n="comudiscusiones2">
+                    Comparte tus ideas y recomendaciones sobre herramientas para el Gestor de Proyectos Empresariales Personalizados.
+                </p>
+            
+                <!-- Selección de Tema -->
+                <div class="mb-4 text-center">
+                    <label for="topicsSelect" class="block text-lg font-medium text-gray-700" data-i18n="comudiscusiones3">
+                        Elige un tema:
+                    </label>
+                    <select
+                        id="topicsSelect"
+                        class="form-select w-full md:w-1/2 mx-auto border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500"
+                    >
+                        <option value="" data-i18n="comudiscusiones4">Selecciona un tema</option>
+                        <option value="gestoresTareas" data-i18n="comudiscusiones5">Gestores de tareas y proyectos</option>
+                        <option value="colaboracionEquipos" data-i18n="comudiscusiones6">Herramientas para colaboración en equipos</option>
+                        <option value="automatizacionFlujos" data-i18n="comudiscusiones7">Automatización de flujos de trabajo</option>
+                        <option value="integracionApps" data-i18n="comudiscusiones8">Integración entre aplicaciones</option>
+                        <option value="anotacionesProductivas" data-i18n="comudiscusiones9">Apps de anotaciones productivas</option>
+                    </select>
+                </div>
+            
+                <!-- Botón para cargar comentarios -->
+                <div class="text-center mb-4">
+                    <button
+                        class="btn btn-warning"
+                        onclick="loadComments()"
+                        data-i18n="comudiscusiones10"
+                    >
+                        Cargar Comentarios
+                    </button>
+                </div>
+            
+                <!-- Contenedor para mostrar comentarios -->
+                <div id="commentsContainer" class="mt-4 p-3 bg-light text-blue-900 border rounded"></div>
+            
+                <!-- Formulario para enviar opinión -->
+                <div id="opinionForm" class="mt-4 hidden">
+                    <h2 class="text-lg font-semibold" data-i18n="comudiscusiones11">Comparte tu opinión:</h2>
+                    <textarea
+                        class="form-control mb-2"
+                        rows="3"
+                        placeholder="Escribe tu comentario..."
+                    ></textarea>
+                    <button
+                        class="btn btn-primary"
+                        onclick="submitOpinion()"
+                        data-i18n="comudiscusiones12"
+                    >
+                        Enviar Opinión
+                    </button>
+                </div>
+            </section>
+            
+            <!--<script>
+                // Datos de temas con comentarios iniciales
+                const topicsDatas = {
+                    gestoresTareas: {
+                        title: "Gestores de tareas y proyectos",
+                        comments: [
+                            "Trello y Asana son herramientas excelentes para organizar tareas.",
+                            "¿Alguien ha probado ClickUp para equipos remotos?",
+                        ],
+                    },
+                    colaboracionEquipos: {
+                        title: "Herramientas para colaboración en equipos",
+                        comments: [
+                            "Slack es ideal para comunicación en tiempo real.",
+                            "Microsoft Teams es muy versátil para empresas grandes.",
+                        ],
+                    },
+                    automatizacionFlujos: {
+                        title: "Automatización de flujos de trabajo",
+                        comments: [
+                            "Zapier facilita mucho la conexión entre aplicaciones.",
+                            "¿Qué opinan de Make (Integromat) para procesos complejos?",
+                        ],
+                    },
+                    integracionApps: {
+                        title: "Integración entre aplicaciones",
+                        comments: [
+                            "Google Workspace y Microsoft 365 son altamente compatibles.",
+                            "La integración de Jira con GitHub ha sido clave en nuestros proyectos.",
+                        ],
+                    },
+                    anotacionesProductivas: {
+                        title: "Apps de anotaciones productivas",
+                        comments: [
+                            "Notion es increíble para centralizar ideas y proyectos.",
+                            "Evernote sigue siendo una herramienta confiable para notas rápidas.",
+                        ],
+                    },
+                };
+            
+                // Función para cargar comentarios
+                function loadComments() {
+                    const selectElement = document.getElementById("topicsSelect");
+                    const selectedValue = selectElement.value;
+            
+                    const commentsContainer = document.getElementById("commentsContainer");
+                    commentsContainer.innerHTML = ""; // Limpiar contenido anterior
+            
+                    const selectedTopic = topicsDatas[selectedValue];
+            
+                    if (selectedTopic) {
+                        // Mostrar comentarios existentes
+                        selectedTopic.comments.forEach((comment) => {
+                            const commentElement = document.createElement("p");
+                            commentElement.textContent = comment;
+                            commentsContainer.appendChild(commentElement);
+                        });
+            
+                        // Mostrar el formulario para enviar opinión
+                        document.getElementById("opinionForm").classList.remove("hidden");
+                    } else {
+                        commentsContainer.innerHTML =
+                            '<p class="text-red-500">Por favor, selecciona un tema válido.</p>';
+                        document.getElementById("opinionForm").classList.add("hidden");
+                    }
+                }
+            
+                // Función para enviar opinión
+                function submitOpinion() {
+                    const selectElement = document.getElementById("topicsSelect");
+                    const selectedValue = selectElement.value;
+            
+                    const commentTextArea = document.querySelector("#opinionForm textarea");
+            
+                    if (selectedValue && commentTextArea.value.trim() !== "") {
+                        // Agregar nuevo comentario al tema seleccionado
+                        topicsDatas[selectedValue].comments.push(
+                            commentTextArea.value.trim()
+                        );
+            
+                        // Limpiar el área de texto
+                        commentTextArea.value = "";
+            
+                        // Recargar comentarios
+                        loadComments();
+            
+                        alert("Tu opinión ha sido enviada exitosamente.");
+                    } else {
+                        alert("Por favor, selecciona un tema y escribe tu comentario.");
+                    }
+                }
+            </script>-->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-3 mt-4">
+        <div class="container mx-auto text-center">
+            <p data-i18n="recofooter"> 2025. Derechos reservados. Pedro Janco Achacollo</p>
+            <div class="social-icons mt-3 flex justify-center space-x-4">
+                <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    
+</html>

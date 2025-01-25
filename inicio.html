@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="inititulo">Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para simplificar -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script> <!-- i18next -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #29294c;
+            color: #eaeaea;
+        }
+
+        .navbar {
+            background-color: #0b0b18;
+        }
+
+        .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-link:hover {
+            color: #00bfff;
+        }
+
+        .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar p-4 navbar-expand-lg fixed-top shadow-lg">
+        <div class="container">
+ 
+
+            <a class="navbar-brand text-white font-bold text-2xl" href="#">P. J. A.</a>
+            
+             <!-- Selector de idioma centrado -->
+            <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+                <select id="language-selector" class="form-select d-inline-block w-auto">
+                <option value="es" selected>Español</option>
+                <option value="en">English</option>
+                </select>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" data-i18n="inicio1" href="#descripcion">Descripción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" data-i18n="inicio2" href="#importancia">Importancia </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" data-i18n="inicio3" href="#personalizar">Personalizar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" data-i18n="inicio4" href="#preguntas">Preguntas frecuentes</a>
+                    </li>
+                    <li >
+                        <a href="index.html" data-i18n="inicio5" class="bg-blue-600 text-white px-3 py-2 rounded"><i class="fas fa-home me-2"></i> Menu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+      <!--scrip para la internalizacion del contenido-->
+    <script>
+        //Función para cargar el archivo XML -->
+        function loadTranslations(language) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "traduccion.xml", true);
+            xhr.onreadystatechange = function () {
+             if (xhr.readyState === 4 && xhr.status === 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "application/xml");
+   
+                var translations = {};
+                var keys = xmlDoc.getElementsByTagName("key");
+                for (var i = 0; i < keys.length; i++) {
+                    var name = keys[i].getAttribute("name");
+                    var value = keys[i].getElementsByTagName(language)[0].textContent;
+                    translations[name] = value;
+                }
+   
+            i18next.init(
+               {
+                 lng: language,
+                 resources: {
+                   [language]: {
+                     translation: translations,
+                   },
+                 },
+               },
+               function (err, t) {
+                    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+                    element.innerHTML = t(element.getAttribute("data-i18n"));
+                     });
+                }
+                );
+             }
+            };
+            xhr.send();
+        }   
+   
+       // Cambiar idioma con el selector
+       document.getElementById("language-selector").addEventListener("change", function () {
+         loadTranslations(this.value);
+       });
+   
+       // Idioma predeterminado al cargar la página
+       window.onload = function () {
+         loadTranslations("es");
+       };
+    </script>
+
+
+<section id="inicio" class="relative mb-8">
+    <!-- Imagen que ocupa toda la pantalla en móviles -->
+    <img src="imgsub/fondo2.avif" alt="Fondo" class="w-full h-screen object-cover filter brightness-75 rounded-none shadow-lg">
+    
+    <!-- Contenedor para el texto -->
+    <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-16">
+      <!-- Título centrado -->
+      <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold animate_animated animate_fadeIn text-center" data-i18n="inicio6">
+        Bienvenido al formulario de preguntas
+      </h1>
+      
+      <!-- Párrafo con texto ajustable en tamaños -->
+      <p class="lead mb-5 text-shadow text-light text-sm sm:text-base md:text-lg lg:text-xl self-end mt-4 text-center" data-i18n="inicio7">
+        Transformamos tus ideas en proyectos exitosos con un enfoque único y personalizado.
+      </p>
+    </div>
+  </section>
+  
+
+    <main class="container py-5">
+        <section id="descripcion" class="py-5 bg-gray-900 text-white">
+            <div class="container">
+                <h2 class="text-center mb-4 text-3xl font-bold" data-i18n="inicio9">Descripción del servicio de gestión de proyectos</h2>
+                <p class="text-center mb-5 text-gray-300" data-i18n="inicio10">Descubre cómo nuestros servicios pueden ayudarte a alcanzar el éxito empresarial a través de una gestión eficiente y personalizada.</p>
+                <div class="row g-4">
+                    <!-- Tarjeta 1 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <img src="img/imagen2.webp" alt="Importancia de la Gestión" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio11">Importancia de la Gestión</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio12">La gestión adecuada asegura que los recursos se utilicen de manera efectiva, reduciendo riesgos y optimizando resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <img src="img/personalizacion.jpeg" alt="Personalización" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio13">Personalización</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio14">Adaptamos nuestros servicios a tus necesidades empresariales específicas, brindando soluciones únicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <img src="img/herramientas.jpeg" alt="Herramientas Avanzadas" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio15">Herramientas Avanzadas</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio16">Accede a herramientas y estrategias modernas diseñadas para maximizar el impacto de tus proyectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#mas-informacion" class="btn btn-primary px-4 py-2 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition" data-i18n="informacion">Más Información</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="importancia" class="py-5 bg-gray-900 text-white">
+            <div class="container">
+                <h2 class="text-center text-3xl font-bold text-blue-400 mb-4" data-i18n="inicio17">Importancia de una Gestión Eficiente</h2>
+                <p class="text-center text-gray-300 mb-5" data-i18n="inicio18">Descubre cómo una gestión eficiente puede marcar la diferencia en el éxito de tu empresa, optimizando recursos y alcanzando metas clave.</p>
+                <div class="row g-4">
+                    <!-- Tarjeta 1 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-chart-line fa-3x text-blue-400"></i>
+                                </div>
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio19">Optimización de Recursos</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio20">Gestionar eficientemente asegura el uso adecuado de recursos financieros, humanos y tecnológicos, evitando desperdicios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-tasks fa-3x text-blue-400"></i>
+                                </div>
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio21">Mejora en la Productividad</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio22">Una planificación clara y ejecución precisa incrementan la productividad y reducen tiempos innecesarios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-800 shadow-lg">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-bullseye fa-3x text-blue-400"></i>
+                                </div>
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio23">Alcance de Objetivos</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio24">Define metas claras y trabaja de manera estratégica para alcanzarlas, asegurando el éxito empresarial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="personalizar" class="py-5 bg-gray-800 text-white">
+            <div class="container">
+                <h2 class="text-center text-3xl font-bold text-blue-400 mb-4" data-i18n="inicio25">¿Qué Puedes Personalizar?</h2>
+                <p class="text-center text-gray-300 mb-5" data-i18n="inicio26">Adapta nuestros servicios a las necesidades específicas de tu empresa. Ofrecemos flexibilidad y soluciones personalizadas para asegurar tu éxito.</p>
+                <div class="row g-4">
+                    <!-- Opción 1 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-900 shadow-lg">
+                            <center><img src="img/procesos.png" class="card-img-top rounded" style="width: 230px; height: auto" alt="Procesos">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio27">Procesos Empresariales</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio28">Optimiza y adapta los procesos a las necesidades específicas de tu sector.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Opción 2 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-900 shadow-lg">
+                            <img src="img/gestion.webp" class="card-img-top rounded" alt="Recursos">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio29">Gestión de Recursos</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio30">Personaliza la asignación de recursos para maximizar la eficiencia y minimizar costos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Opción 3 -->
+                    <div class="col-md-4">
+                        <div class="card bg-gray-900 shadow-lg">
+                            <img src="img/metas.png" class="card-img-top rounded" alt="Metas">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-xl font-semibold text-blue-400" data-i18n="inicio31">Definición de Metas</h5>
+                                <p class="card-text text-gray-300" data-i18n="inicio32">Establece objetivos claros y ajustables según las prioridades de tu empresa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="preguntas" class="py-5">
+            <h2 class="text-center mb-4" data-i18n="inicio33">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" data-i18n="inicio34" type="button" data-bs-toggle="collapse" data-bs-target="#faq1Content" aria-expanded="true" aria-controls="faq1Content">
+                            ¿Qué incluye el servicio?
+                        </button>
+                    </h2>
+                    <div id="faq1Content" class="accordion-collapse collapse show" aria-labelledby="faq1">
+                        <div class="accordion-body" data-i18n="inicio35">
+                            Ofrecemos un análisis detallado, planificación personalizada y herramientas adaptadas a tus necesidades.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" data-i18n="inicio36" type="button" data-bs-toggle="collapse" data-bs-target="#faq2Content" aria-expanded="false" aria-controls="faq2Content">
+                            ¿Es adecuado para pequeñas empresas?
+                        </button>
+                    </h2>
+                    <div id="faq2Content" class="accordion-collapse collapse" aria-labelledby="faq2">
+                        <div class="accordion-body" data-i18n="inicio37">
+                            Sí, nuestros servicios están diseñados para empresas de todos los tamaños.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-3 mt-4">
+            <div class="container mx-auto text-center">
+                <p data-i18n="footer"> 2025. Derechos reservados. Pedro Janco Achacollo</p>
+                <div class="social-icons mt-3 flex justify-center space-x-4">
+                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

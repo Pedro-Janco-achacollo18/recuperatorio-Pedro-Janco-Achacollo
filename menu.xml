@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <item>
+        <nombre><es>Inicio</es><en>
+        Start</en></nombre>
+        <link>index.html</link>
+    </item>
+    <item>
+        <nombre><es>Formulario de registro</es><en>Registration form</en></nombre>
+        <link>formulario.html</link>
+    </item>
+    <item>
+        <nombre><es>Detalles del Proyecto</es><en>Project Details</en></nombre>
+        <link>detalles.html</link>
+    </item>
+    <item>
+        <nombre><es>Recomendaciones</es><en>Activity recommendations</en></nombre>
+        <link>recomendaciones.html</link>
+    </item>
+    <item>
+        <nombre><es>Comunidad</es><en>Community</en></nombre>
+        <link>comunidad.html</link>
+    </item>
+    <item>
+        <nombre><es>Extras</es><en>Extras</en></nombre>
+        <link>extras.html</link>
+    </item>
+    <item>
+        <nombre><es>FAQ</es><en>FAQ</en></nombre>
+        <link>faq.html</link>
+    </item>
+    <item>
+        <nombre><es>Contacto</es><en>Contact</en></nombre>
+        <link>contacto.html</link>
+    </item>
+</menu>
